@@ -16,20 +16,24 @@
                                         <thead>
                                         <tr>
                                             <th>序号</th>
-                                            <th>模具名称</th>
-                                            <th>模具规格</th>
-                                            <th>开模时间</th>
-                                            <th>模具价格</th>
+                                            <th>采购单位</th>
+                                            <th>类型</th>
+                                            <th>规格</th>
+                                            <th>开票时间</th>
+                                            <th>数量</th>
+                                            <th>单价</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <volist name="moulds" id="mould">
                                         <tr>
                                             <td>{$i}</td>
-                                            <td>{$mould.m_name}</td>
-                                            <td>{$mould.m_guige}</td>
-                                            <td>{$mould.m_date}</td>
-                                            <td>{$mould.m_price}</td>
+                                            <td>{$mould.p_name}</td>
+                                            <td>{$mould.c_type}</td>
+                                            <td>{$mould.c_guige}</td>
+                                            <td>{$mould.c_date}</td>
+                                            <td>{$mould.c_number}</td>
+                                            <td>{$mould.c_price}</td>
                                         </tr>
                                         </volist>
                                         </tbody>
