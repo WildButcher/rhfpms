@@ -1,0 +1,73 @@
+
+<include file="layout/header" />
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <section class="content-header">
+                    <h1>
+                        模具管理
+                        <small>Moulds Manager</small>
+                    </h1>
+                </section>
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <div class="box">
+                                <script>
+                                    var d = new dTree('d');
+                                    d.add(0,-1,'客户厂家','__APP__/Admin/Moulds/Index/cid/-1');
+                                </script>
+                                <volist name="customers" id="customer">
+                                    <script>
+                                        d.add('{$customer.id}',0,'{$customer.c_name}','__APP__/Admin/Moulds/Index/cid/{$customer.id}');
+                                    </script>
+                                </volist>
+                                <script>
+                                    document.write(d);
+                                </script>
+                            </div>
+                        </div>
+                        <div class="col-xs-9">
+                            <div class="box">
+                                <div class="box-body table-responsive">
+                                    <button class="btn btn-app btn-sm" onclick="location='__CONTROLLER__/mouldsAdd/cid/{$cid}'">新增</button>
+                                    <button class="btn btn-app btn-sm" onclick="location='__CONTROLLER__/toExcel'">导出</button>
+                                    <h4>
+                                        以下是【{$c_name.c_name}】所属的{$mouldsCount}个模具：
+                                    </h4>
+                                    <table id="example2" class="table table-bordered table-hover text-center">
+                                        <thead>
+                                        <tr>
+                                            <th class="col-xs-2">操作</th>
+                                            <th>序号</th>
+                                            <th>模具名称</th>
+                                            <th>模具规格</th>
+                                            <th>开模时间</th>
+                                            <th>模具价格</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <volist name="moulds" id="mould">
+                                        <tr>
+                                            <td>
+                                                <button class="btn btn-danger btn-sm" onclick="location='__CONTROLLER__/mouldsDel/i/{$mould.id}/cid/{$cid}'"><i class="fa fa-times"></i></button>
+                                                <button class="btn btn-success btn-sm" onclick="location='__CONTROLLER__/mouldsShow/i/{$mould.id}/cid/{$cid}'"><i class="fa fa-edit"></i></button>
+                                            </td>
+                                            <td>{$i}</td>
+                                            <td>{$mould.m_name}</td>
+                                            <td>{$mould.m_guige}</td>
+                                            <td>{$mould.m_date}</td>
+                                            <td>{$mould.m_price}</td>
+                                        </tr>
+                                        </volist>
+                                        </tbody>
+                                    </table>
+                                    <div class="text-center pagelist">
+                                        　　{$page}
+                                    </div>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div>
+                    </div>
+                </section>
+            </aside><!-- /.right-side -->
+<include file="layout/footer" />

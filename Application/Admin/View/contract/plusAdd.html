@@ -1,0 +1,125 @@
+<include file="layout/header" />
+<!--
+    以下js用于ajax动态查询
+-->
+<script language="javascript">
+    /*
+     * 方法作用：单位名称文本框失去焦点后隐藏div
+     * 输入：obj文本框对象
+     * 输出：隐藏div
+     */
+    function hiddenList(obj){
+        $(obj).hide();
+    }
+
+    /*
+     * 方法作用：填充隐藏的单位id和填充单位名称
+     * 输入：i单位id号，n单位名称
+     * 输出：填充成功
+     */
+    function fText(i,n,g,p){
+        $('#c_name').val(n);
+        $('#c_guige').val(g);
+        $('#c_price').val(p);
+        //$('#c_show').hide();
+    }
+
+    /*
+     * 方法作用：通过ajax获取后台的【商品】数据列表，并用js拼凑为一个table，table的tr有onclick方法调用。拼凑完毕后增加到隐藏div中。
+     * 输入：obj文本框对象本身
+     * 输出：显现div层，并且数据为数据库中查询的数据列表即单位名称
+     */
+    function getGoodsList(obj){
+        $('#c_show').text("");
+        jQuery.ajax({
+            url : '__APP__/Admin/Goods/listForAjax/',
+            data : {'c_guige':obj.value},
+            dataType : 'json',
+            success : function(data){
+                var str = '<table id=\"example2\" class=\"table table-bordered table-hover text-left\"><thead><tr><td class=\"text-right\"><b>【关闭】</b></td></thead><tbody>';
+                console.log(data);
+                for(x in data){
+                    str = str + '<tr><td onClick=\"fText(\'' + data[x].id + '\',\''+ data[x].p_name +'\',\''+ data[x].p_guige +'\',\''+ data[x].p_price +'\');\">'+data[x].p_guige+'</td></tr>';
+                };
+                str = str + '</table>';
+                $('#c_show').append(str);
+            },
+            error : function(){
+                $('#c_show').hide();
+            }
+        });
+
+        $('#c_show').attr('z-index','999');
+        $('#c_show').css( {
+            'position' : 'absolute',
+            'padding':'10px',
+            'top' : '140px',
+            'left' :'10px',
+            'background': '#FFFFFF'
+        } ).show();
+    }
+
+    /*
+     * 方法作用：根据单价和数量计算总金额
+     */
+    function sumTotal(){
+        var total = $('#c_price').val() * $('#c_number').val();
+        $('#c_total').val(total);
+    }
+</script>
+<!-- Right side column. Contains the navbar and content of the page -->
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            产品附加
+            <small>Goods In</small>
+        </h1>
+    </section>
+    <section class="content" id="bbb">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body table-responsive">
+                        <form role="form" action="__CONTROLLER__/recordInsert/cid/{$cid}" method="post" name="form1">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>产品名称</label>
+                                <input type="hidden" id="c_id" name="c_id" value="{$cid}"/>
+                                <input type="text" id="c_name" name="c_name" class="form-control" placeholder="请选择...">
+                            </div>
+                            <div class="form-group" id="c_show"  style="display:none;" onclick="hiddenList(this)"></div>
+                            <div class="form-group">
+                                <label>产品规格</label>
+                                <input type="text" id="c_guige" name="c_guige" class="form-control" placeholder="请输入..." oninput="getGoodsList(this)">
+                            </div>
+                            <div class="form-group">
+                                <label>类型</label>
+                                <select name="c_type" class="form-control">
+                                    <option value="模具">模具</option>
+                                    <option value="胶套">胶套</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>产品单价</label>
+                                <input type="text" id="c_price" name="c_price" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <label>产品数量</label>
+                                <input type="text" id="c_number" name="c_number" class="form-control" placeholder="请输入..." oninput="sumTotal()">
+                            </div>
+                            <div class="form-group">
+                                <label>总金额</label>
+                                <input type="text" id="c_total" name="c_total" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary btn-sm" value="保存">
+                                <button class="btn btn-primary btn-sm" onclick="javascript:window.history.go(-1)">返回</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</aside><!-- /.right-side -->
+<include file="layout/footer" />

@@ -1,0 +1,63 @@
+<include file="layout/header" />
+<!-- Right side column. Contains the navbar and content of the page -->
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            产品修改
+            <small>Product Edit</small>
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body table-responsive">
+                        <form role="form" action="__CONTROLLER__/recordUpdate" method="post">
+                            <input type="hidden" name="id" value="{$goods.id}" />
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>产品名称</label>
+                                <input type="text" name="p_name" class="form-control" placeholder="请输入..." value="{$goods.p_name}">
+                            </div>
+                            <div class="form-group">
+                                <label>产品类型</label>
+                                <select name="p_kind" class="form-control">
+                                    <option value="{$goods.p_kind}" selected>{$goods.p_kind}</option>
+                                    <option value="板坯">板坯</option>
+                                    <option value="胶筒">胶筒</option>
+                                    <option value="胶塞">胶塞</option>
+                                    <option value="胶垫">胶垫</option>
+                                    <option value="炉门条">炉门条</option>
+                                    <option value="O型圈">O型圈</option>
+                                    <option value="矩形圈">矩形圈</option>
+                                    <option value="异形件">异形件</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>产品规格</label>
+                                <input type="text" name="p_guige" class="form-control" placeholder="请输入..." value="{$goods.p_guige}">
+                            </div>
+                            <div class="form-group">
+                                <label>产品价格</label>
+                                <input type="text" name="p_price" class="form-control" placeholder="请输入..." value="{$goods.p_price}">
+                            </div>
+                            <div class="form-group">
+                                <label>产品重量</label>
+                                <input type="text" name="p_weight" class="form-control" placeholder="请输入..." value="{$goods.p_weight}">
+                            </div>
+                            <div class="form-group">
+                                <label>产品原料</label>
+                                <input type="text" name="p_raw" class="form-control" placeholder="请输入..." value="{$goods.p_raw}">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary btn-sm" value="保存">
+                                <button class="btn btn-primary btn-sm" onclick="javascript:window.history.go(-1)">返回</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</aside><!-- /.right-side -->
+<include file="layout/footer" />

@@ -1,0 +1,1145 @@
+[ 2016-09-13T01:34:05+08:00 ] ::1 /index.php/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 325 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 330 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 341 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 352 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:34:06+08:00 ] ::1 /index.php/Admin/Customer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer` ORDER BY id DESC LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 321 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 331 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.054003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.054003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-13T01:34:09+08:00 ] ::1 /index.php/Admin/Customer/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer` ORDER BY id DESC LIMIT 25,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 321 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 331 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:34:17+08:00 ] ::1 /index.php/Admin/User
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `user` ORDER BY id DESC LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 326 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 331 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 342 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-13T01:34:23+08:00 ] ::1 /index.php/Admin/User/recordShow/id/4
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `user` WHERE `id` = 4 LIMIT 1   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\835092260aefba1f5e2744e9a0d77fe7.php 第 254 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\835092260aefba1f5e2744e9a0d77fe7.php 第 303 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\835092260aefba1f5e2744e9a0d77fe7.php 第 320 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\835092260aefba1f5e2744e9a0d77fe7.php 第 325 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\835092260aefba1f5e2744e9a0d77fe7.php 第 330 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\835092260aefba1f5e2744e9a0d77fe7.php 第 341 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:34:28+08:00 ] ::1 /index.php/Admin/User
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `user` ORDER BY id DESC LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 326 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 331 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 342 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-09-13T01:34:29+08:00 ] ::1 /index.php/Admin/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:34:35+08:00 ] ::1 /index.php/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 325 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 330 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 341 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 352 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:35:10+08:00 ] ::1 /index.php/Admin/Customer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer` ORDER BY id DESC LIMIT 0,25   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 321 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 331 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:35:13+08:00 ] ::1 /index.php/Admin/Customer/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer` ORDER BY id DESC LIMIT 25,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 321 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 331 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:35:25+08:00 ] ::1 /index.php/Admin/Moulds/index/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0050s ]
+SQL: SELECT * FROM `customer`  [ RunTime:0.0000s ]
+SQL: SELECT `c_name` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `moulds` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `moulds` WHERE `cid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `moulds` WHERE `cid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moulds` WHERE `cid` = 1 LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\663915f84112d561fa1f4188ab14e0dc.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\663915f84112d561fa1f4188ab14e0dc.php 第 326 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\663915f84112d561fa1f4188ab14e0dc.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\663915f84112d561fa1f4188ab14e0dc.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.023001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:35:28+08:00 ] ::1 /index.php/Admin/Moulds/Index/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0030s ]
+SQL: SELECT * FROM `customer`  [ RunTime:0.0000s ]
+SQL: SELECT `c_name` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `moulds` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `moulds` WHERE `cid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `moulds` WHERE `cid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moulds` WHERE `cid` = 1 LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\663915f84112d561fa1f4188ab14e0dc.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\663915f84112d561fa1f4188ab14e0dc.php 第 326 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\663915f84112d561fa1f4188ab14e0dc.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\663915f84112d561fa1f4188ab14e0dc.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:35:36+08:00 ] ::1 /index.php/Admin/Goods
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `goods` ORDER BY id DESC LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 326 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-13T01:35:39+08:00 ] ::1 /index.php/Admin/Goods/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods` ORDER BY id DESC LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `goods` ORDER BY id DESC LIMIT 25,25   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 326 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-13T01:35:40+08:00 ] ::1 /index.php/Admin/Contract
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `contract` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `contract` ORDER BY id DESC LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `contract` ORDER BY id DESC LIMIT 0,25   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 254 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 303 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 320 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 325 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 330 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 352 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:36:33+08:00 ] ::1 /index.php/Admin/Contract
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `contract` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `contract` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `contract` ORDER BY id DESC LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 254 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 303 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 320 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 325 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 330 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 352 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:36:36+08:00 ] ::1 /index.php/Admin/User
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `user` ORDER BY id DESC LIMIT 0,25   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 326 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 331 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 342 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:36:39+08:00 ] ::1 /index.php/Admin/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-13T01:36:48+08:00 ] ::1 /index.php/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 325 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 330 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 341 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 352 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:36:49+08:00 ] ::1 /index.php/Admin/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:36:58+08:00 ] ::1 /index.php/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 325 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 330 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 341 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 352 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-13T01:37:03+08:00 ] ::1 /index.php/Admin/Moulds/index/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0040s ]
+SQL: SELECT * FROM `customer`  [ RunTime:0.0000s ]
+SQL: SELECT `c_name` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `moulds` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `moulds` WHERE `cid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `moulds` WHERE `cid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moulds` WHERE `cid` = 1 LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\663915f84112d561fa1f4188ab14e0dc.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\663915f84112d561fa1f4188ab14e0dc.php 第 326 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\663915f84112d561fa1f4188ab14e0dc.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\663915f84112d561fa1f4188ab14e0dc.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:37:11+08:00 ] ::1 /index.php/Admin/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:38:07+08:00 ] ::1 /index.php/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 325 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 330 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 341 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 352 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-09-13T01:38:09+08:00 ] ::1 /index.php/Admin/User
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `user` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `user` ORDER BY id DESC LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 326 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 331 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\40e15a767f36c06afd02d63f7affa4e1.php 第 342 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:38:12+08:00 ] ::1 /index.php/Admin/Contract
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `contract` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `contract` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `contract` ORDER BY id DESC LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 254 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 303 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 320 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 325 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 330 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 352 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-13T01:39:05+08:00 ] ::1 /index.php/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 325 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 330 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 341 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 352 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:39:06+08:00 ] ::1 /index.php/Admin/Customer
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `customer` ORDER BY id DESC LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 321 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 331 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:39:09+08:00 ] ::1 /index.php/Admin/Customer/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `customer` ORDER BY id DESC LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `customer` ORDER BY id DESC LIMIT 25,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 321 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 331 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\854a26db4864f286c7281e78002411c0.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001001s ]
+
+[ 2016-09-13T01:39:11+08:00 ] ::1 /index.php/Admin/Moulds/index/cid/1
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `customer` [ RunTime:0.0020s ]
+SQL: SELECT * FROM `customer`  [ RunTime:0.0000s ]
+SQL: SELECT `c_name` FROM `customer` WHERE `id` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `moulds` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `moulds` WHERE `cid` = 1 LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `moulds` WHERE `cid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `moulds` WHERE `cid` = 1 LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\663915f84112d561fa1f4188ab14e0dc.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\663915f84112d561fa1f4188ab14e0dc.php 第 326 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\663915f84112d561fa1f4188ab14e0dc.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\663915f84112d561fa1f4188ab14e0dc.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-13T01:39:14+08:00 ] ::1 /index.php/Admin/Goods
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods` ORDER BY id DESC LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `goods` ORDER BY id DESC LIMIT 0,25   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 326 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-13T01:39:17+08:00 ] ::1 /index.php/Admin/Goods/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0020s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `goods` ORDER BY id DESC LIMIT 25,25   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 326 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T01:39:18+08:00 ] ::1 /index.php/Admin/Contract
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `contract` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `contract` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `contract` ORDER BY id DESC LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 254 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 303 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 320 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 325 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 330 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 352 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-13T01:39:23+08:00 ] ::1 /index.php/Admin/Index/logout
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T16:12:54+08:00 ] ::1 /index.php/Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 325 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 330 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 341 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 352 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-13T16:13:46+08:00 ] ::1 /index.php/Admin/Contract
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `contract` [ RunTime:0.0660s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `contract` ORDER BY id DESC LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `contract` ORDER BY id DESC LIMIT 0,25   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 254 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 303 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 320 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 325 行.
+NOTIC: [8] Undefined variable: shangpin D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 330 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 352 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.034002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.034002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+
+[ 2016-09-13T16:21:47+08:00 ] ::1 /index.php/Admin/Goods
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0610s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods` ORDER BY id DESC LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `goods` ORDER BY id DESC LIMIT 0,25   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 326 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T16:21:50+08:00 ] ::1 /index.php/Admin/Goods/index/p/2.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0030s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `goods` ORDER BY id DESC LIMIT 25,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 326 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002500s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-13T16:22:55+08:00 ] ::1 /index.php/Admin/Goods/index/p/3.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `goods` ORDER BY id DESC LIMIT 50,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 326 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T16:23:05+08:00 ] ::1 /index.php/Admin/Goods/index/p/4.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods` ORDER BY id DESC LIMIT 1   [ RunTime:0.0010s ]
+SQL: SELECT * FROM `goods` ORDER BY id DESC LIMIT 75,25   [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 326 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.006001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.006001s ]
+
+[ 2016-09-13T16:23:08+08:00 ] ::1 /index.php/Admin/Goods/index/p/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0050s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `goods` ORDER BY id DESC LIMIT 100,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 326 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-09-13T16:23:09+08:00 ] ::1 /index.php/Admin/Goods/index/p/5.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0040s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `goods` ORDER BY id DESC LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `goods` ORDER BY id DESC LIMIT 100,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 255 行.
+NOTIC: [8] Undefined variable: username D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 304 行.
+NOTIC: [8] Undefined variable: gaikuang D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 321 行.
+NOTIC: [8] Undefined variable: kehu D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 326 行.
+NOTIC: [8] Undefined variable: hetong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 342 行.
+NOTIC: [8] Undefined variable: xitong D:\Myfiles\workspace\rhfpm\Application\Runtime\Cache\Admin\180f89ee4212391075a9ba3d84789e47.php 第 353 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.000000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.000000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

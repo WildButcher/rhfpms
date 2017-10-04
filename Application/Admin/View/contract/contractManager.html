@@ -1,0 +1,106 @@
+<include file="layout/header" />
+<!-- Right side column. Contains the navbar and content of the page -->
+<script language="javascript">
+    /*
+     * 方法作用：更改form表单的action并提交
+     */
+    function changeStatus(obj){
+        var str = "__CONTROLLER__/recordChange/status/" + obj;
+        $("#formContractList").attr("action", str);
+        var o = document.getElementsByName('selectedOne[]');
+        var sid = new Array();
+        for(x in o){
+            if(o[x].checked == true){
+                sid.push(o[x].value);
+            }
+        }
+        $("#sid").val(sid);
+        $("#formContractList").submit();
+
+    }
+    /*
+     * 方法作用：关联报价单。更改提交的表单的action并提交
+     */
+    function relationPriceBill(){
+        var str = "__CONTROLLER__/relationShow";
+        $("#formContractList").attr("action", str);
+        $("#formContractList").submit();
+    }
+    /*
+     * 方法作用：导出excel
+     */
+    function exportExcel(){
+        var str = "__CONTROLLER__/toExcel";
+        $("#formContractList").attr("action", str);
+        $("#formContractList").submit();
+    }
+
+
+</script>
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            合同签订
+            <small>Contract Make</small>
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body table-responsive">
+                        <button class="btn btn-app btn-sm" onclick="location='__CONTROLLER__/recordNew'">新增</button>
+                        <button class="btn btn-app btn-sm" onclick="changeStatus('签订')">签订</button>
+                        <button class="btn btn-app btn-sm" onclick="changeStatus('已开票')">开票</button>
+                        <button class="btn btn-app btn-sm" onclick="changeStatus('已回款')">回款</button>
+                        <button class="btn btn-app btn-sm" onclick="relationPriceBill()">关联报价单</button>
+                        <button class="btn btn-app btn-sm" onclick="exportExcel()">导出</button>
+                        <form method="post" action="__CONTROLLER__/recordSearch" role="form" id="formContractList">
+                            <input type="text" name="p_name" class="form-control" placeholder="请输入查找的单位/公司名称...">
+                            <input type="hidden" id="sid" name="sid"/>
+                            <input type="submit" class="btn btn-primary btn-sm" value="查找"/>
+                        </form>
+                        <table id="example2" class="table table-bordered table-hover text-left">
+                            <thead>
+                            <tr>
+                                <th class="col-xs-2 text-center">
+                                    <input type="checkbox" id="chk_all" name="chk_all" onclick="select_all(this)" />
+                                    操作
+                                </th>
+                                <th class="text-center">序号</th>
+                                <th class="text-center">客户名称</th>
+                                <th class="text-center">签订日期</th>
+                                <th class="text-center">合同金额</th>
+                                <th class="text-center">发票编号</th>
+                                <th class="text-center">合同状态</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <volist name="contracts" id="contract">
+                                <tr>
+                                    <td class="text-center">
+                                        <input type="checkbox" name="selectedOne[]" value="{$contract.id}" />
+                                        <button class="btn btn-danger btn-sm" onclick="location='__CONTROLLER__/recordDelete/id/{$contract.id}'"><i class="fa fa-times"></i></button>
+                                        <button class="btn btn-success btn-sm" onclick="location='__CONTROLLER__/recordShow/id/{$contract.id}'"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-facebook btn-sm" onclick="location='__APP__/Admin/ContractPlus/Index/id/{$contract.id}'"><i class="fa fa-plus-square"></i></button>
+                                    </td>
+                                    <td class="text-center">{$i}</td>
+                                    <td>{$contract.p_name}</td>
+                                    <td>{$contract.c_date}</td>
+                                    <td>{$contract.c_price}</td>
+                                    <td>{$contract.i_no}</td>
+                                    <td>{$contract.c_status}</td>
+                                </tr>
+                            </volist>
+                            </tbody>
+                        </table>
+                        <div class="text-center pagelist">
+                            　　{$page}
+                        </div>
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </section>
+</aside><!-- /.right-side -->
+<include file="layout/footer" />

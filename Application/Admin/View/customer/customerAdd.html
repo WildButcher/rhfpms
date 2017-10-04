@@ -1,0 +1,56 @@
+<include file="layout/header" />
+<!-- Right side column. Contains the navbar and content of the page -->
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            客户增加
+            <small>Customer Add</small>
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body table-responsive">
+                        <form role="form" action="__CONTROLLER__/recordInsert" method="post">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>单位名称</label>
+                                <input type="text" name="c_name" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <label>单位税号</label>
+                                <input type="text" name="c_tax" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <label>地址电话</label>
+                                <input type="text" name="c_addr" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <label>开户行及帐号</label>
+                                <input type="text" name="c_bank" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <label>传真号</label>
+                                <input type="text" name="c_fax" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <label>联系人</label>
+                                <input type="text" name="c_linkman" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <label>联系人电话</label>
+                                <input type="text" name="c_linkmobile" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary btn-sm" value="保存">
+                                <button class="btn btn-primary btn-sm" onclick="javascript:window.history.go(-1)">返回</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</aside><!-- /.right-side -->
+<include file="layout/footer" />

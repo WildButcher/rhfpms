@@ -1,0 +1,115 @@
+<include file="layout/header" />
+<!--
+    以下js用于ajax动态查询
+-->
+<script language="javascript">
+    /*
+     * 方法作用：单位名称文本框失去焦点后隐藏div
+     * 输入：obj文本框对象
+     * 输出：隐藏div
+     */
+    function hiddenList(){
+        $('#c_show').hide();
+    }
+
+    /*
+     * 方法作用：填充隐藏的单位id和填充单位名称
+     * 输入：i单位id号，n单位名称
+     * 输出：填充成功
+     */
+    function fText(i,n){
+        $('#p_id').val(i);
+        $('#p_name').val(n);
+        $('#c_show').hide();
+    }
+
+    /*
+     * 方法作用：通过ajax获取后台的数据列表，并用js拼凑为一个table，table的tr有onclick方法调用。拼凑完毕后增加到隐藏div中。
+     * 输入：obj文本框对象本身
+     * 输出：显现div层，并且数据为数据库中查询的数据列表即单位名称
+     */
+    function getList(obj){
+        $('#c_show').text("");
+        jQuery.ajax({
+            url : '__APP__/Admin/Customer/listForAjax/',
+            data : {'c_name':obj.value},
+            dataType : 'json',
+            success : function(data){
+                var str = '<table id=\"example2\" class=\"table table-bordered table-hover text-left\"><thead><tr><td class=\"text-right\"><b>【关闭】</b></td></thead><tbody>';
+                console.log(data);
+                for(x in data){
+                    str = str + '<tr><td onClick=\"fText(\'' + data[x].id + '\',\''+ data[x].c_name +'\');\">'+data[x].c_name+'</td></tr>';
+                };
+                str = str + '</table>';
+                $('#c_show').append(str);
+            },
+            error : function(){
+                $('#c_show').hide();
+            }
+        });
+
+        $('#c_show').attr('z-index','999');
+        $('#c_show').css( {
+            'position' : 'absolute',
+            'padding':'10px',
+            'top' : '75px',
+            'left' :'10px',
+            'background': '#FFFFFF'
+        } ).show();
+    }
+</script>
+<!-- Right side column. Contains the navbar and content of the page -->
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            合同签订
+            <small>Contract In</small>
+        </h1>
+    </section>
+    <section class="content" id="bbb">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body table-responsive">
+                        <form role="form" action="__CONTROLLER__/recordUpdate" method="post" name="form1">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>客户名称</label>
+                                <input type="hidden" id="p_id" name="p_id" value="{$contract.p_id}"/>
+                                <input type="hidden" id="id" name="id" value="{$contract.id}"/>
+                                <input type="text" id="p_name" name="p_name" class="form-control" placeholder="请选择..." oninput="getList(this)" value="{$contract.p_name}">
+                            </div>
+                            <div class="form-group" id="c_show"  style="display:none;" onclick="hiddenList()"></div>
+                            <div class="form-group">
+                                <label>签订日期</label><br/>
+                                <input name="c_date" type="text" class="Wdate" onClick="WdatePicker()" value="{$contract.c_date}">
+                            </div>
+                            <div class="form-group">
+                                <label>合同金额</label>
+                                <input type="text" name="c_price" class="form-control" placeholder="请输入..." value="{$contract.c_price}">
+                            </div>
+                            <div class="form-group">
+                                <label>发票编号</label>
+                                <input type="text" name="i_no" class="form-control" placeholder="请输入..." value="{$contract.i_no}"/>
+                            </div>
+                            <div class="form-group">
+                                <label>合同状态</label>
+                                <select name="c_status" class="form-control">
+                                    <option value="{$contract.c_status}">{$contract.c_status}</option>
+                                    <option value="已拟定">已拟定</option>
+                                    <option value="已签订">已签订</option>
+                                    <option value="已开票">已开票</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary btn-sm" value="保存">
+                                <button class="btn btn-primary btn-sm" onclick="javascript:window.history.go(-1)">返回</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</aside><!-- /.right-side -->
+<include file="layout/footer" />

@@ -1,0 +1,45 @@
+<include file="layout/header" />
+<!-- Right side column. Contains the navbar and content of the page -->
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            模具增加
+            <small>Moulds Add</small>
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body table-responsive">
+                        <form role="form" action="__CONTROLLER__/mouldsSave" method="post">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>模具名称</label>
+                                <input type="text" name="m_name" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <label>模具规格</label>
+                                <input type="text" name="m_guige" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <label>开模时间</label>
+                                <input name="m_date" type="text" class="Wdate" onClick="WdatePicker()">
+                            </div>
+                            <div class="form-group">
+                                <label>模具价格</label>
+                                <input type="text" name="m_price" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary btn-sm" value="保存">
+                                <button class="btn btn-primary btn-sm" onclick="javascript:window.history.go(-1)">返回</button>
+                            </div>
+                            <input type="hidden" name="cid" value="{$cid}" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</aside><!-- /.right-side -->
+<include file="layout/footer" />

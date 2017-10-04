@@ -1,0 +1,56 @@
+
+<include file="layout/header" />
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <section class="content-header">
+                    <h1>
+                        客户资料管理
+                        <small>Customer Manager</small>
+                    </h1>
+                </section>
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-body table-responsive">
+                                    <button class="btn btn-app btn-sm" onclick="location='__CONTROLLER__/recordNew'">新增</button>
+                                    <button class="btn btn-app btn-sm" onclick="">导出</button>
+                                    <form method="post" action="__CONTROLLER__/recordSearch" role="form" name="c_search">
+                                        <input type="text" name="c_name" class="form-control" placeholder="请输入查找的单位/公司名称...">
+                                        <input type="submit" class="btn btn-primary btn-sm" value="查找"/>
+                                    </form>
+                                    <table id="example2" class="table table-bordered table-hover text-left">
+                                        <thead>
+                                        <tr>
+                                            <th class="col-xs-2 text-center">操作</th>
+                                            <th class="text-center">序号</th>
+                                            <th class="text-center">客户名称</th>
+                                            <th class="text-center">税号</th>
+                                            <th class="text-center">单位地址</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <volist name="customers" id="customer">
+                                        <tr>
+                                            <td class="text-center">
+                                                <button class="btn btn-danger btn-sm" onclick="location='__CONTROLLER__/recordDelete/id/{$customer.id}'"><i class="fa fa-times"></i></button>
+                                                <button class="btn btn-success btn-sm" onclick="location='__CONTROLLER__/recordShow/id/{$customer.id}'"><i class="fa fa-edit"></i></button>
+                                            </td>
+                                            <td class="text-center">{$i}</td>
+                                            <td>{$customer.c_name}</td>
+                                            <td>{$customer.c_tax}</td>
+                                            <td>{$customer.c_addr}</td>
+                                        </tr>
+                                        </volist>
+                                        </tbody>
+                                    </table>
+                                    <div class="text-center pagelist">
+                                        　　{$page}
+                                    </div>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div>
+                    </div>
+                </section>
+            </aside><!-- /.right-side -->
+<include file="layout/footer" />

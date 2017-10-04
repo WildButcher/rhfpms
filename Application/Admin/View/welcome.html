@@ -1,0 +1,158 @@
+<include file="layout/header" />
+    <script>
+        function changeYear(){
+            var year = document.getElementById('c_date').value;
+            var url = '__APP__/Admin/Index/index/c_date/' + year;
+            window.location.href = url;
+        }
+
+        function viewContractList(f,c){
+            var url = '__APP__/Admin/Contract/mobileView';
+            url = url + '/flag/' + f + '/c_date/' + c;
+            window.location.href = url;
+        }
+    </script>
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <section class="content-header">
+                    <h1>
+                        概况
+                        <small>Generally</small>
+                    </h1>
+                </section>
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="text-center">模具查询:</div>
+                                <form method="post" action="__APP__/Admin/Moulds/mouldsViewList">
+                                    <div class="input-group margin box-body">
+                                        <input type="text" class="form-control" name="m_guige">
+                                        <span class="input-group-btn">
+                                          <button type="submit" class="btn btn-info btn-flat" onclick="">查询</button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-body table-responsive">
+                                    <table id="example2" class="table table-bordered table-hover text-left">
+                                        <thead>
+                                            <tr>
+                                                <th class="col-xs-2 text-center">合同款项</th>
+                                                <th class="col-xs-10 text-center">
+                                                    <select id="c_date" class="form-control" onchange="changeYear()">
+                                                        <option value="">请选择年份</option>
+                                                        <option value="2016">2016</option>
+                                                        <option value="2017">2017</option>
+                                                        <option value="2018">2018</option>
+                                                    </select>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="text-center">合同总数:</td>
+                                                <td class="text-left">{$contractCount}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">合同总金额:</td>
+                                                <td class="text-left">{$contractPrice}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">已回款合同数:</td>
+                                                <td class="text-left">【 {$hasContractCount} 】<a href="#" class="navbar-link" onclick="viewContractList('1','{$c_date}')">点击查看详情...</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">已回款金额:</td>
+                                                <td class="text-left">{$hasContractPrice}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">未收合同数:</td>
+                                                <td class="text-left">【 {$contractCount-$hasContractCount} 】<a href="#" class="navbar-link" onclick="viewContractList('0','{$c_date}')">点击查看详情...</a></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">未收款金额:</td>
+                                                <td class="text-left">{$contractPrice-$hasContractPrice}</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center">回款率</td>
+                                                <td class="text-left">{$hasContractPrice / $contractPrice * 100|round=###,3}%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-body table-responsive">
+                                    <table id="example2" class="table table-bordered table-hover text-left">
+                                        <thead>
+                                        <tr>
+                                            <th class="col-xs-2 text-center">原料库存</th>
+                                            <th class="col-xs-10 text-center"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center">天然胶</td>
+                                            <td class="text-left">数值</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">丁晴胶</td>
+                                            <td class="text-left">数值</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-body table-responsive">
+                                    <table id="example2" class="table table-bordered table-hover text-left">
+                                        <thead>
+                                        <tr>
+                                            <th class="col-xs-2 text-center">职工情况</th>
+                                            <th class="col-xs-10 text-center"></th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center">职工总人数</td>
+                                            <td class="text-left">【 {$employees} 】人</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">女职工</td>
+                                            <td class="text-left">【 {$e_gender} 】人</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">签订劳动合同</td>
+                                            <td class="text-left">【 {$e_contract} 】人</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">退休返聘</td>
+                                            <td class="text-left">【 {$e_retird} 】人</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">双重关系</td>
+                                            <td class="text-left">【 {$e_double} 】人</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </aside><!-- /.right-side -->
+<include file="layout/footer" />

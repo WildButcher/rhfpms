@@ -1,0 +1,53 @@
+<include file="layout/header" />
+<!-- Right side column. Contains the navbar and content of the page -->
+
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            合同签订
+            <small>Contract Make</small>
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body table-responsive">
+                        <button class="btn btn-app btn-sm" onclick="location='__APP__/Admin/Contract'">返回</button>
+                        <button class="btn btn-app btn-sm" onclick="location='__CONTROLLER__/recordNew/cid/{$cid}'">新增</button>
+                        <input type="hidden" id="cid" name="{$cid}"/>
+                        <table id="example2" class="table table-bordered table-hover text-left">
+                            <thead>
+                            <tr>
+                                <th class="text-center">操作</th>
+                                <th class="text-center">产品名称</th>
+                                <th class="text-center">产品规格</th>
+                                <th class="text-center">类型</th>
+                                <th class="text-center">产品单价</th>
+                                <th class="text-center">产品数量</th>
+                                <th class="text-center">总金额</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <volist name="contract_pluses" id="contract_plus">
+                                <tr>
+                                    <td class="text-center">
+                                        <button class="btn btn-danger btn-sm" onclick="location='__CONTROLLER__/recordDelete/id/{$contract_plus.id}/cid/{$cid}'"><i class="fa fa-times"></i></button>
+                                    </td>
+                                    <td>{$contract_plus.c_name}</td>
+                                    <td>{$contract_plus.c_guige}</td>
+                                    <td>{$contract_plus.c_type}</td>
+                                    <td>{$contract_plus.c_price}</td>
+                                    <td>{$contract_plus.c_number}</td>
+                                    <td>{$contract_plus.c_total}</td>
+                                </tr>
+                            </volist>
+                            </tbody>
+                        </table>
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </section>
+</aside><!-- /.right-side -->
+<include file="layout/footer" />

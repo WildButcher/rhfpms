@@ -1,0 +1,59 @@
+<include file="layout/header" />
+<!-- Right side column. Contains the navbar and content of the page -->
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            职工信息
+            <small>Employee Info</small>
+        </h1>
+    </section>
+    <section class="content" id="bbb">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body table-responsive">
+                        <form role="form" action="__CONTROLLER__/recordUpdate" method="post" name="form1">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>职工名称</label>
+                                <input type="hidden" id="id" name="id" value="{$employee.id}"/>
+                                <input type="text" id="e_name" name="e_name" class="form-control" placeholder="请选择..." value="{$employee.e_name}">
+                            </div>
+                            <div class="form-group">
+                                <label>性别</label><br/>
+                                <select name="e_gender" class="form-control">
+                                    <option value="{$employee.e_gender}">{$employee.e_gender}</option>
+                                    <option value="男">男</option>
+                                    <option value="女">女</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>联系电话</label>
+                                <input type="text" name="e_moblie" class="form-control" placeholder="请输入..." value="{$employee.e_moblie}">
+                            </div>
+                            <div class="form-group">
+                                <label>薪酬</label>
+                                <input type="text" name="e_pay" class="form-control" placeholder="请输入..." value="{$employee.e_pay}"/>
+                            </div>
+                            <div class="form-group">
+                                <label>职工状态</label>
+                                <select name="e_status" class="form-control">
+                                    <option value="{$employee.e_status}">{$employee.e_status}</option>
+                                    <option value="在职">在职</option>
+                                    <option value="退休返聘">退休返聘</option>
+                                    <option value="双重关系">双重关系</option>
+                                    <option value="其他">其他</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary btn-sm" value="保存">
+                                <button class="btn btn-primary btn-sm" onclick="javascript:window.history.go(-1)">返回</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</aside><!-- /.right-side -->
+<include file="layout/footer" />

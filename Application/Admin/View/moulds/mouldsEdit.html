@@ -1,0 +1,46 @@
+<include file="layout/header" />
+<!-- Right side column. Contains the navbar and content of the page -->
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            模具信息修改
+            <small>Moulds Edit</small>
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body table-responsive">
+                        <form role="form" action="__CONTROLLER__/mouldsUpdate" method="post">
+                            <input type="hidden" name="id" value="{$moulds.id}" />
+                            <input type="hidden" name="cid" value="{$moulds.cid}" />
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>模具名称</label>
+                                <input type="text" name="m_name" class="form-control" placeholder="请输入..." value="{$moulds.m_name}">
+                            </div>
+                            <div class="form-group">
+                                <label>模具规格</label>
+                                <input type="text" name="m_guige" class="form-control" placeholder="请输入..." value="{$moulds.m_guige}">
+                            </div>
+                            <div class="form-group">
+                                <label>开模时间</label>
+                                <input type="text" name="m_date" class="Wdate" onClick="WdatePicker()" value="{$moulds.m_date}">
+                            </div>
+                            <div class="form-group">
+                                <label>模具价格</label>
+                                <input type="text" name="m_price" class="form-control" placeholder="请输入..." value="{$moulds.m_price}">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary btn-sm" value="保存">
+                                <button class="btn btn-primary btn-sm" onclick="javascript:window.history.go(-1)">返回</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</aside><!-- /.right-side -->
+<include file="layout/footer" />
