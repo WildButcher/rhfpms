@@ -54,7 +54,7 @@ class DataToExcel
     {
         header("Content-type:application/octet-stream");
         header("Accept-Ranges:bytes");
-        header("Content-type:application/vnd.ms-excel;charset=UTF-8");
+        header("Content-type:application/vnd.ms-excel");
         header("Content-Disposition:attachment;filename=" . $filename . ".xls");
         header("Pragma: no-cache");
         header("Expires: 0");
@@ -69,7 +69,7 @@ class DataToExcel
         if (!empty($data)) {
             foreach ($data as $key => $val) {
                 foreach ($val as $ck => $cv) {
-                    $data[$key][$ck] =  $cv;
+                    $data[$key][$ck] = $cv;
                 }
                 $data[$key] = implode("\t", $data[$key]);
 

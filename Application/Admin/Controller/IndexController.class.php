@@ -20,9 +20,7 @@ class IndexController extends Controller {
         //合同统计
         $Contract = M('contract');
         $c_date = I('c_date');//签订日期
-        if(!$c_date){
-            $c_date = date('Y');
-        }
+        
         //人员统计
         $Employee = M('employee');
 
@@ -41,6 +39,7 @@ class IndexController extends Controller {
         $c_has_price = $Contract->where($wheresql)->sum('c_price');//获取当前年已回款合同的金额
         if($c_has_price){
             $this->assign('hasContractPrice',$c_has_price);
+            $this->assign('c_date',$c_date);
         }else{
             $this->assign('hasContractPrice',0);
         }

@@ -18,10 +18,10 @@ class ContractController extends Controller {
      */
     public function index(){
         $Form = M('contract');
-        $count = $Form->order('c_date DESC,id')->count();
+        $count = $Form->order('id DESC')->count();
         $Page = new \Think\Page($count,25);
         $show = $Page->show();
-        $rs = $Form->order('c_date DESC,id')->limit($Page->firstRow.','.$Page->listRows)->select();
+        $rs = $Form->order('id DESC')->limit($Page->firstRow.','.$Page->listRows)->select();
         $this->assign('contracts', $rs);
         $this->assign('page',$show);
         $this->display('contract/contractManager');

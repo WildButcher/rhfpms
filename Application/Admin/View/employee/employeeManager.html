@@ -1,5 +1,42 @@
 <include file="layout/header" />
 <!-- Right side column. Contains the navbar and content of the page -->
+<script language="javascript">
+    /*
+     * 方法作用：更改form表单的action并提交
+     */
+    function changeStatus(obj){
+        var str = "__CONTROLLER__/recordChange/status/" + obj;
+        $("#formContractList").attr("action", str);
+        var o = document.getElementsByName('selectedOne[]');
+        var sid = new Array();
+        for(x in o){
+            if(o[x].checked == true){
+                sid.push(o[x].value);
+            }
+        }
+        $("#sid").val(sid);
+        $("#formContractList").submit();
+
+    }
+    /*
+     * 方法作用：关联报价单。更改提交的表单的action并提交
+     */
+    function relationPriceBill(){
+        var str = "__CONTROLLER__/relationShow";
+        $("#formContractList").attr("action", str);
+        $("#formContractList").submit();
+    }
+    /*
+     * 方法作用：导出excel
+     */
+    function exportExcel(){
+        var str = "__CONTROLLER__/toExcel";
+        $("#formContractList").attr("action", str);
+        $("#formContractList").submit();
+    }
+
+
+</script>
 <aside class="right-side">
     <section class="content-header">
         <h1>
@@ -17,7 +54,7 @@
                             <thead>
                             <tr>
                                 <th class="col-xs-2 text-center">
-                                                                    操作
+                                    操作
                                 </th>
                                 <th class="text-center">序号</th>
                                 <th class="text-center">人员姓名</th>
