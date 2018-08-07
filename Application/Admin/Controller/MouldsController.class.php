@@ -153,13 +153,18 @@ class MouldsController extends Controller
      * @param $filename 下载的文件名
      * 输出：Excel文件
      */
-    public function toExcel(){
-        $Form = M('moulds');
-        $title = array('模具规格','开模时间','模具价格');
-        $filename = '模具情况列表';
-        $exportData = $Form->field('m_guige,m_date,m_price')->select();
-        $exportExcel = new DataToExcel();
-        $exportExcel->exportexcel2($exportData,$title,$filename);
+    public function toExcel($cid){
+    	$Form = M('moulds');
+    	$title = array('模具规格','开模时间','模具价格');
+    	$filename = '模具情况列表';
+    	if($cid==-1){
+    		$exportData = $Form->field('m_guige,m_date,m_price')->select();
+    	}else{
+    		$wheresql['cid'] = $cid;
+    		$exportData = $Form->where($wheresql)->field('m_guige,m_date,m_price')->select();
+    	}
+    	$exportExcel = new DataToExcel();
+        $exportExcel->exportexcel($exportData,$title,$filename);
     }
 
 
@@ -175,5 +180,17 @@ class MouldsController extends Controller
         $this->assign('moulds', $moulds);
         $this->display('moulds/mouldsViewList');
     }
-
+    /*
+     * 方法作用：查询模具规格
+     * 输入：模具规格
+     * 输出：查询结果列表，包括合同信息
+     *
+     */
+    public function searchViewList($m_guige){
+        $Form = M('moulds');
+        $wheresql['m_guige'] = array('like','%'.$m_guige.'%');
+        $moulds = $Form->where($wheresql)->order('id DESC')->select();
+        $this->assign('moulds', $moulds);
+        $this->display('moulds/mouldsSearchList');
+    }
 }

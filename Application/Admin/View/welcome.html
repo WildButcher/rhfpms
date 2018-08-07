@@ -24,10 +24,25 @@
                     <div class="row">
                         <div class="col-xs-12">
                             <div class="box">
-                                <div class="text-center">模具查询:</div>
+                                <div class="text-center">销售查询:</div>
                                 <form method="post" action="__APP__/Admin/ContractPlus/searchViewList">
                                     <div class="input-group margin box-body">
                                         <input type="text" class="form-control" name="c_guige">
+                                        <span class="input-group-btn">
+                                          <button type="submit" class="btn btn-info btn-flat" onclick="">查询</button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="text-center">模具查询:</div>
+                                <form method="post" action="__APP__/Admin/Moulds/searchViewList">
+                                    <div class="input-group margin box-body">
+                                        <input type="text" class="form-control" name="m_guige">
                                         <span class="input-group-btn">
                                           <button type="submit" class="btn btn-info btn-flat" onclick="">查询</button>
                                         </span>
@@ -105,17 +120,21 @@
                                     <table id="example2" class="table table-bordered table-hover text-left">
                                         <thead>
                                         <tr>
-                                            <th class="col-xs-2 text-center">原料库存</th>
+                                            <th class="col-xs-2 text-center">经营成本</th>
                                             <th class="col-xs-10 text-center"></th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td class="text-center">天然胶</td>
+                                            <td class="text-center">人工成本</td>
+                                            <td class="text-left">{$paytotal}</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">原料成本</td>
                                             <td class="text-left">数值</td>
                                         </tr>
                                         <tr>
-                                            <td class="text-center">丁晴胶</td>
+                                            <td class="text-center">管理成本</td>
                                             <td class="text-left">数值</td>
                                         </tr>
                                         </tbody>
@@ -123,45 +142,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12">
-                            <div class="box">
-                                <div class="box-body table-responsive">
-                                    <table id="example2" class="table table-bordered table-hover text-left">
-                                        <thead>
-                                        <tr>
-                                            <th class="col-xs-2 text-center">职工情况</th>
-                                            <th class="col-xs-10 text-center"></th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td class="text-center">职工总人数</td>
-                                            <td class="text-left">【 {$employees} 】人</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">女职工</td>
-                                            <td class="text-left">【 {$e_gender} 】人</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">签订劳动合同</td>
-                                            <td class="text-left">【 {$e_contract} 】人</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">退休返聘</td>
-                                            <td class="text-left">【 {$e_retird} 】人</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">双重关系</td>
-                                            <td class="text-left">【 {$e_double} 】人</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div>                    
                 </section>
             </aside><!-- /.right-side -->
 <include file="layout/footer" />

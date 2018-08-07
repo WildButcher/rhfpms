@@ -23,6 +23,9 @@
         $('#c_show').hide();
     }
 
+    function fungoback(){
+    	  window.location.href = "/Admin/Contract"; 
+    }
     /*
      * 方法作用：通过ajax获取后台的【客户】数据列表，并用js拼凑为一个table，table的tr有onclick方法调用。拼凑完毕后增加到隐藏div中。
      * 输入：obj文本框对象本身
@@ -102,9 +105,11 @@
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-primary btn-sm" value="保存">
-                                <button class="btn btn-primary btn-sm" onclick="javascript:window.history.go(-1)">返回</button>
                             </div>
                         </form>
+                        <div>                                
+                                <button class="btn btn-primary btn-sm" onclick="fungoback();">返回</button>
+                        </div>
                     </div>
                 </div>
             </div>

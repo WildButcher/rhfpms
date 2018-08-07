@@ -1,0 +1,209 @@
+[ 2018-07-30T15:22:45+08:00 ] 127.0.0.1 /Admin/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `contract` [ RunTime:0.0120s ]
+SQL: SHOW COLUMNS FROM `employee` [ RunTime:0.0110s ]
+SQL: SELECT * FROM `contract` WHERE `c_date` LIKE '%%'  [ RunTime:0.0010s ]
+SQL: SELECT SUM(c_price) AS tp_sum FROM `contract` WHERE `c_date` LIKE '%%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `contract` WHERE `c_date` LIKE '%%' AND `c_status` = '已回款'  [ RunTime:0.0000s ]
+SQL: SELECT SUM(c_price) AS tp_sum FROM `contract` WHERE `c_date` LIKE '%%' AND `c_status` = '已回款' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `employee`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `employee` WHERE `e_gender` = '女'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `employee` WHERE `e_status` = '在职'  [ RunTime:0.0010s ]
+SQL: SELECT * FROM `employee` WHERE `e_status` = '退休返聘'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `employee` WHERE `e_status` = '双重关系'  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: kehu F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 92 行.
+NOTIC: [8] Undefined variable: shangpin F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 97 行.
+NOTIC: [8] Undefined variable: hetong F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 108 行.
+NOTIC: [8] Undefined variable: employee F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 118 行.
+NOTIC: [8] Undefined variable: xitong F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 128 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.016001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-07-30T15:22:50+08:00 ] 127.0.0.1 /Admin/Index/index/c_date/2018
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `contract` [ RunTime:0.0070s ]
+SQL: SHOW COLUMNS FROM `employee` [ RunTime:0.0070s ]
+SQL: SELECT * FROM `contract` WHERE `c_date` LIKE '%2018%'  [ RunTime:0.0010s ]
+SQL: SELECT SUM(c_price) AS tp_sum FROM `contract` WHERE `c_date` LIKE '%2018%' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `contract` WHERE `c_date` LIKE '%2018%' AND `c_status` = '已回款'  [ RunTime:0.0000s ]
+SQL: SELECT SUM(c_price) AS tp_sum FROM `contract` WHERE `c_date` LIKE '%2018%' AND `c_status` = '已回款' LIMIT 1   [ RunTime:0.0000s ]
+SQL: SELECT * FROM `employee`  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `employee` WHERE `e_gender` = '女'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `employee` WHERE `e_status` = '在职'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `employee` WHERE `e_status` = '退休返聘'  [ RunTime:0.0000s ]
+SQL: SELECT * FROM `employee` WHERE `e_status` = '双重关系'  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: kehu F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 92 行.
+NOTIC: [8] Undefined variable: shangpin F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 97 行.
+NOTIC: [8] Undefined variable: hetong F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 108 行.
+NOTIC: [8] Undefined variable: employee F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 118 行.
+NOTIC: [8] Undefined variable: xitong F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 128 行.
+NOTIC: [2] Division by zero F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\eea688c288fc97c3a0cfe11b847f7230.php 第 236 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-07-30T15:22:53+08:00 ] 127.0.0.1 /Admin/Contract
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `contract` [ RunTime:0.0060s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `contract` ORDER BY id DESC LIMIT 1   [ RunTime:0.0020s ]
+SQL: SELECT * FROM `contract` ORDER BY id DESC LIMIT 0,25   [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 70 行.
+NOTIC: [8] Undefined variable: gaikuang F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 87 行.
+NOTIC: [8] Undefined variable: kehu F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 92 行.
+NOTIC: [8] Undefined variable: shangpin F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 97 行.
+NOTIC: [8] Undefined variable: employee F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 118 行.
+NOTIC: [8] Undefined variable: xitong F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\e5c588f4f760464e5a23f92fb5ead023.php 第 128 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-07-30T15:22:55+08:00 ] 127.0.0.1 /Admin/ContractPlus/Index/id/45
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `contract_add` [ RunTime:0.0120s ]
+SQL: SELECT * FROM `contract_add` WHERE `c_id` = 45 ORDER BY id DESC  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: username F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\2d04df418a24b6fdbefa39a0a3c2c433.php 第 70 行.
+NOTIC: [8] Undefined variable: gaikuang F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\2d04df418a24b6fdbefa39a0a3c2c433.php 第 87 行.
+NOTIC: [8] Undefined variable: kehu F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\2d04df418a24b6fdbefa39a0a3c2c433.php 第 92 行.
+NOTIC: [8] Undefined variable: shangpin F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\2d04df418a24b6fdbefa39a0a3c2c433.php 第 97 行.
+NOTIC: [8] Undefined variable: employee F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\2d04df418a24b6fdbefa39a0a3c2c433.php 第 118 行.
+NOTIC: [8] Undefined variable: xitong F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\2d04df418a24b6fdbefa39a0a3c2c433.php 第 128 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-07-30T15:22:57+08:00 ] 127.0.0.1 /Admin/ContractPlus/recordNew/cid/45
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\33e57eabfde08e3271c1e30ec716acb2.php 第 70 行.
+NOTIC: [8] Undefined variable: gaikuang F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\33e57eabfde08e3271c1e30ec716acb2.php 第 87 行.
+NOTIC: [8] Undefined variable: kehu F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\33e57eabfde08e3271c1e30ec716acb2.php 第 92 行.
+NOTIC: [8] Undefined variable: shangpin F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\33e57eabfde08e3271c1e30ec716acb2.php 第 97 行.
+NOTIC: [8] Undefined variable: employee F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\33e57eabfde08e3271c1e30ec716acb2.php 第 118 行.
+NOTIC: [8] Undefined variable: xitong F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\33e57eabfde08e3271c1e30ec716acb2.php 第 128 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.013000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-07-30T15:23:01+08:00 ] 127.0.0.1 /Admin/Goods/listForAjax/?c_guige=480x34x1000
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `goods` [ RunTime:0.0110s ]
+SQL: SELECT `id`,`p_name`,`p_guige`,`p_price` FROM `goods` WHERE `p_guige` LIKE '%480x34x1000%' ORDER BY id DESC  [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-07-30T15:23:11+08:00 ] 127.0.0.1 /Admin/ContractPlus/recordInsert/cid/45
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `contract_add` [ RunTime:0.0070s ]
+NOTIC: [8] Undefined index: validate F:\Myfiles\workspace\rhfpms\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto F:\Myfiles\workspace\rhfpms\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `contract_add` (`c_id`,`c_name`,`c_guige`,`c_type`,`c_price`,`c_number`,`c_total`) VALUES ('45','刀具胶套','480x34x1000','胶套','13','10','130') [ RunTime:0.0050s ]
+
+[ 2018-07-30T15:23:11+08:00 ] 127.0.0.1 /Admin/ContractPlus/Index/id/45.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `contract_add` [ RunTime:0.0080s ]
+SQL: SELECT * FROM `contract_add` WHERE `c_id` = 45 ORDER BY id DESC  [ RunTime:0.0000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: username F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\2d04df418a24b6fdbefa39a0a3c2c433.php 第 70 行.
+NOTIC: [8] Undefined variable: gaikuang F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\2d04df418a24b6fdbefa39a0a3c2c433.php 第 87 行.
+NOTIC: [8] Undefined variable: kehu F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\2d04df418a24b6fdbefa39a0a3c2c433.php 第 92 行.
+NOTIC: [8] Undefined variable: shangpin F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\2d04df418a24b6fdbefa39a0a3c2c433.php 第 97 行.
+NOTIC: [8] Undefined variable: employee F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\2d04df418a24b6fdbefa39a0a3c2c433.php 第 118 行.
+NOTIC: [8] Undefined variable: xitong F:\Myfiles\workspace\rhfpms\Application\Runtime\Cache\Admin\2d04df418a24b6fdbefa39a0a3c2c433.php 第 128 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+

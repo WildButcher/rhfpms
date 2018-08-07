@@ -34,7 +34,7 @@ class ContractPlusController extends Controller {
     public function recordDelete($id,$cid){
         $Form = M('contract_add');
         if($Form->delete($id)){
-            $this->redirect('Admin/ContractPlus/Index/id/'.$cid);
+            $this->redirect('/Admin/Contract_Plus/Index/id/'.$cid);
         }
     }
 
@@ -58,8 +58,8 @@ class ContractPlusController extends Controller {
         if($Form->create()){
             $result = $Form->add();
             if ($result) {
-                dump('Admin/ContractPlus/Index/id'.$cid);
-                $this->redirect('Admin/ContractPlus/Index/id/'.$cid);
+                //dump('Admin/ContractPlus/Index/id/'.$cid);
+                $this->redirect('/Admin/Contract_Plus/Index/id/'.$cid);
             } else {
                 $this->error('合同附加信息添加错误！');
             }
@@ -75,7 +75,7 @@ class ContractPlusController extends Controller {
      *  
      */
     public function searchViewList($c_guige){
-        $Form = M('v_search_moulds');
+        $Form = M('v_search_product');
         $wheresql['c_guige'] = array('like','%'.$c_guige.'%');
         $moulds = $Form->where($wheresql)->order('id DESC')->select();
         $this->assign('moulds', $moulds);

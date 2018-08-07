@@ -20,10 +20,12 @@ class IndexController extends Controller {
         //合同统计
         $Contract = M('contract');
         $c_date = I('c_date');//签订日期
-        
-        //人员统计
-        $Employee = M('employee');
+        if($c_date == ''){
+            $c_date = date('Y');
+        }
 
+        //合同统计
+        
         $wheresql['c_date'] = array('like','%'.$c_date.'%');//根据提交的日期组合查询条件
         $c_count = count($Contract->where($wheresql)->select());//获取当前年所有合同数
         $this->assign('contractCount',$c_count);
@@ -44,26 +46,13 @@ class IndexController extends Controller {
             $this->assign('hasContractPrice',0);
         }
 
-        //以下为统计职工情况
-
-        $employees = count($Employee->select());
-        $this->assign('employees',$employees);
-
-        $genderwheresql['e_gender'] = array('EQ','女');
-        $e_gender = count($Employee->where($genderwheresql)->select());
-        $this->assign('e_gender',$e_gender);
-
-        $contractwheresql['e_status'] = array('EQ','在职');
-        $e_contract = count($Employee->where($contractwheresql)->select());
-        $this->assign('e_contract',$e_contract);
-
-        $retirdwheresql['e_status'] = array('EQ','退休返聘');
-        $e_retird = count($Employee->where($retirdwheresql)->select());
-        $this->assign('e_retird',$e_retird);
-
-        $doublewheresql['e_status'] = array('EQ','双重关系');
-        $e_double = count($Employee->where($doublewheresql)->select());
-        $this->assign('e_double',$e_double);
+        //人工成本统计
+        $payform = M('payroll');
+        $payyear = date('Y');
+        $paywhere['paymonth'] = array('like',$payyear.'%');
+        $paytotal = $payform->where($paywhere)->sum('paytotal');
+        $this->assign('paytotal',$paytotal);
+        
 
         $this->assign('c_date',$c_date);
         $this->assign('username',$username);

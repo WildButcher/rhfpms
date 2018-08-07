@@ -1,0 +1,171 @@
+<include file="layout/header" />
+<!-- Right side column. Contains the navbar and content of the page -->
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+<!--
+    以下js用于ajax动态查询
+-->
+<script language="javascript">
+    /*
+     * 方法作用：通过ajax获取后台的人员和基本工资，拼成一个table中的tr挂在tbody下面
+     *
+     */
+    function makePayList(obj){
+        obj.disabled="disabled";
+        $('#fafang').removeClass("disabled");
+        jQuery.ajax({
+            url : '__APP__/Admin/Employeepay/makePayList/',
+            data : {},
+            dataType : 'json',
+            success : function(data){
+                var str = '';
+                var i = 1;
+                for(x in data){
+                    str = str + '<tr><input type=\'hidden\' name=\'e_id[]\' value=\''+data[x].id+'\' />';
+                    str = str + '<td class=\"text-center\">'+ i +'</td>';
+                    str = str + '<td>'+data[x].e_name+'</td>';
+                    str = str + '<td>'+data[x].e_gender+'</td>';
+                    str = str + '<td><input name=\'e_pay[]\' type=\'text\' value=\''+data[x].e_pay+'\' /></td>';
+                    str = str + '<td></td>';
+                    str = str + '<td></td>';
+                    str = str + '<td></td>';
+                    str = str + '<td></td>';
+                    str = str + '<td></td>';
+                    str = str + '<td></td>';
+                    str = str + '<td></td>';
+                    str = str + '<td></td>';
+                    str = str + '<td></td></tr>';
+                    i = i + 1;
+                };
+                $('#paycontentajx').append(str);                
+            },
+            error : function(){
+                console.log(str);
+            }
+        }); 
+        
+    }
+
+    function formSubmit(){
+    	$('#payform').submit();
+    }
+    /*
+     * 方法作用：计算发放工资总额
+     */
+    function sumTotal(){
+        
+    }
+</script>
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            职工薪酬发放
+            <small>EmployeePay</small>
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body table-responsive">
+                        <div class="dropdown">                        
+                          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            {$year}
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a href="__CONTROLLER__/index/year/2018">2018</a></li>
+                            <li><a href="__CONTROLLER__/index/year/2019">2019</a></li>
+                            <li><a href="__CONTROLLER__/index/year/2020">2020</a></li>
+                           <!-- 
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#">Separated link</a></li>
+                             -->
+                          </ul>                       
+                        </div>
+                        <br/>
+                        <ul class="nav nav-tabs">
+                          <li role="presentation"><a href="__CONTROLLER__/showpay/year/{$year}/month/01">一月</a></li>
+                          <li role="presentation"><a href="__CONTROLLER__/showpay/year/{$year}/month/02">二月</a></li>
+                          <li role="presentation"><a href="__CONTROLLER__/showpay/year/{$year}/month/03">三月</a></li>
+                          <li role="presentation"><a href="__CONTROLLER__/showpay/year/{$year}/month/04">四月</a></li>
+                          <li role="presentation"><a href="__CONTROLLER__/showpay/year/{$year}/month/05">五月</a></li>
+                          <li role="presentation"><a href="__CONTROLLER__/showpay/year/{$year}/month/06">六月</a></li>
+                          <li role="presentation"><a href="__CONTROLLER__/showpay/year/{$year}/month/07">七月</a></li>
+                          <li role="presentation"><a href="__CONTROLLER__/showpay/year/{$year}/month/08">八月</a></li>
+                          <li role="presentation"><a href="__CONTROLLER__/showpay/year/{$year}/month/09">九月</a></li>
+                          <li role="presentation"><a href="__CONTROLLER__/showpay/year/{$year}/month/10">十月</a></li>
+                          <li role="presentation"><a href="__CONTROLLER__/showpay/year/{$year}/month/11">十一月</a></li>
+                          <li role="presentation"><a href="__CONTROLLER__/showpay/year/{$year}/month/12">十二月</a></li>
+                        </ul>
+                        <script>                        
+                            $(function(){
+                              var _li = $(".nav-tabs").find("li");                            
+                              var ac = Number({$month});
+                              $(_li[ac-1]).addClass("active");
+                            });
+                        </script>                       
+                    </div><!-- /.box-body -->
+                    <form id="payform" role="form" action="__CONTROLLER__/recordInsert" method="post">
+                    <input type="hidden" name="year" value="{$year}" />
+                    <input type="hidden" name="month" value="{$month}" />
+                    <table id="example2" class="table table-bordered table-hover text-left">
+                        <thead>
+                            <tr>
+                                <th class="text-center">序号</th>
+                                <th class="text-center">姓名</th>
+                                <th class="text-center">性别</th>
+                                <th class="text-center">基本工资</th>
+                                <th class="text-center">岗位工资</th>
+                                <th class="text-center">工龄工资</th>
+                                <th class="text-center">交通补贴</th>
+                                <th class="text-center">养老保险</th>
+                                <th class="text-center">医疗保险</th>
+                                <th class="text-center">工伤保险</th>
+                                <th class="text-center">失业保险</th>
+                                <th class="text-center">生育保险</th>
+                                <th class="text-center">住房公积金</th>
+                            </tr>
+                        </thead>
+                        <tbody id="paycontentajx">
+                            <volist name="payrolls" id="payroll" empty="还未发放员工薪酬" >
+                                <tr>
+                                    <input type='hidden' name='e_id[]' value='{$payroll.id}' />                                 
+                                    <td class="text-center">{$i}</td>
+                                    <td>{$payroll.e_name}</td>
+                                    <td>{$payroll.e_gender}</td>
+                                    <td><input name='e_pay[]' type='text' value='{$payroll.e_pay}' /></td>
+                                    <td>{$payroll.postwage}</td>
+                                    <td>{$payroll.agewage}</td>
+                                    <td>{$payroll.m_wage}</td>
+                                    <td>{$payroll.s_bao}</td>
+                                    <td>{$payroll.y_bao}</td>
+                                    <td>{$payroll.gs_bao}</td>
+                                    <td>{$payroll.l_bao}</td>
+                                    <td>{$payroll.sy_bao}</td>
+                                    <td>{$payroll.zf_bao}</td>
+                                </tr>
+                            </volist>
+                        </tbody>
+                    </table>                            
+                    </form>
+                    <div>
+                        <table id="example2" class="table table-bordered table-hover text-left">
+                            <thead>
+                                <th class="text-center">实发总额</th>
+                            </thead>
+                            <tbody id="totalcontent">
+                                <tr class="text-center">
+                                    <td>{$sumpaymonth}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <button class="btn btn-app {$zaoce}" onclick="javascript:makePayList(this);">造册</button>
+                    <button class="btn btn-app disabled" onclick="location='__CONTROLLER__'">====></button>
+                    <button class="btn btn-app {$fafang}" id="fafang" onclick="javascript:formSubmit()">发放</button>
+                </div><!-- /.box -->
+            </div>
+        </div>        
+    </section>
+</aside><!-- /.right-side -->
+<include file="layout/footer" />

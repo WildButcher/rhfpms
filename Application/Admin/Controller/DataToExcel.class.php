@@ -31,7 +31,7 @@ class DataToExcel
         if (!empty($data)) {
             foreach ($data as $key => $val) {
                 foreach ($val as $ck => $cv) {
-                    $data[$key][$ck] = iconv("UTF-8", "GBK", $cv);
+                    $data[$key][$ck] = iconv("UTF-8", "GB2312", $cv);
                 }
                 $data[$key] = implode("\t", $data[$key]);
 
