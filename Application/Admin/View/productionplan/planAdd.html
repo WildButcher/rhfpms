@@ -1,0 +1,53 @@
+<include file="layout/header" />
+<!-- Right side column. Contains the navbar and content of the page -->
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            计划增加
+            <small>Production Plan Add</small>
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body table-responsive">
+                        <form role="form" action="__CONTROLLER__/recordInsert" method="post">
+                        <input type="hidden" name="p_status" value="进行中" />
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>用户名称</label>
+                                <input type="text" name="p_customer" class="form-control" placeholder="请输入...">
+                            </div>                            
+                            <div class="form-group">
+                                <label>产品规格</label>
+                                <input type="text" name="p_guige" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <label>产品数量</label>
+                                <input type="text" name="p_num" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <label>开始日期</label>
+                                <input type="text" name="p_stardate" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <label>完成日期</label>
+                                <input type="text" name="p_plandate" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <label>备注</label>
+                                <input type="text" name="p_remark" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary btn-sm" value="保存">
+                                <button class="btn btn-primary btn-sm" onclick="javascript:window.history.go(-1)">返回</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</aside><!-- /.right-side -->
+<include file="layout/footer" />

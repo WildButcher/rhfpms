@@ -1,0 +1,68 @@
+
+<include file="layout/header" />
+<!-- Right side column. Contains the navbar and content of the page -->
+<script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            生产计划
+            <small>Production Plan Manager</small>
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body table-responsive">
+                    <ul class="nav nav-tabs">
+                          <li role="presentation"><a href="__CONTROLLER__/">生产中</a></li>
+                          <li role="presentation" class="active"><a href="__CONTROLLER__/planFinish">已完成</a></li>
+                        </ul>
+                        <br/>
+                        <form method="post" action="__CONTROLLER__/recordSearch" role="form" id="formContractList">
+                            <input type="text" name="p_customer" class="form-control" placeholder="请输入查找的单位/公司名称...">
+                            <input type="hidden" id="sid" name="sid"/>
+                            <input type="hidden" id="wcf" name="wcf" value="planFinish"/>
+                            <input type="submit" class="btn btn-primary btn-sm" value="查找"/>
+                        </form>
+                        <table id="example2" class="table table-bordered table-hover text-left">
+                            <thead>
+                            <tr>
+                                <th class="text-center">序号</th>
+                                <th class="text-center">用户名称</th>
+                                <th class="text-center">产品规格</th>
+                                <th class="text-center">产品数量</th>
+                                <th class="text-center">开始日期</th>
+                                <th class="text-center">完成日期</th>
+                                <th class="text-center">实际完成</th>
+                                <th class="text-center">计划状态</th>
+                                <th class="text-center">备注</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <volist name="plans" id="plan" empty="暂时没有数据" >
+                                <tr>
+                                    <td class="text-center">{$i}</td>
+                                    <td>{$plan.p_customer}</td>
+                                    <td>{$plan.p_guige}</td>
+                                    <td>{$plan.p_num}</td>
+                                    <td>{$plan.p_stardate}</td>
+                                    <td>{$plan.p_plandate}</td>
+                                    <td>{$plan.p_factdate}</td>
+                                    <td>{$plan.p_status}</td>
+                                    <td>{$plan.p_remark}</td>
+                                </tr>
+                            </volist>
+                            </tbody>
+                        </table>
+                        <div class="text-center pagelist">
+                            　　{$page}
+                        </div>
+                    </div><!-- /.box-body -->
+
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </section>
+</aside><!-- /.right-side -->
+<include file="layout/footer" />

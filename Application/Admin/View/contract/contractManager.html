@@ -18,6 +18,7 @@
         $("#formContractList").submit();
 
     }
+
     /*
      * 方法作用：关联报价单。更改提交的表单的action并提交
      */
@@ -50,7 +51,8 @@
                 <div class="box">
                     <div class="box-body table-responsive">
                         <button class="btn btn-app btn-sm" onclick="location='__CONTROLLER__/recordNew'">新增</button>
-                        <button class="btn btn-app btn-sm" onclick="changeStatus('签订')">签订</button>
+                        <button class="btn btn-app btn-sm" onclick="changeStatus('已签订')">签订</button>
+                        <button class="btn btn-app btn-sm" onclick="changeStatus('已发货')">发货</button>
                         <button class="btn btn-app btn-sm" onclick="changeStatus('已开票')">开票</button>
                         <button class="btn btn-app btn-sm" onclick="changeStatus('已回款')">回款</button>
                         <button class="btn btn-app btn-sm" onclick="relationPriceBill()">关联报价单</button>
