@@ -25,7 +25,7 @@ class ProductionplanController extends Controller {
         
         $show = $Page->show();
         $wheresql['p_status'] = '生产中';
-        $list = $Form->where($wheresql)->order('id')->limit($Page->firstRow . ',' . $Page->listRows)->select();
+        $list = $Form->where($wheresql)->order('p_factdate DESC')->limit($Page->firstRow . ',' . $Page->listRows)->select();
         $this->assign('plans', $list);
         $this->assign('page', $show);
         $this->display('productionplan/planManager');
