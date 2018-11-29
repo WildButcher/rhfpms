@@ -1,0 +1,86 @@
+<include file="layout/header" />
+<!-- Right side column. Contains the navbar and content of the page -->
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            合同明细
+            <small>Contract Detail</small>
+        </h1>
+    </section>
+    <section class="content" id="bbb">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body table-responsive">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>客户名称</label>-->{$contract.p_name}
+                            </div>                            
+                            <div class="form-group">
+                                <label>签订日期</label>-->{$contract.c_date}
+                            </div>
+                            <div class="form-group">
+                                <label>完成日期</label>-->{$contract.c_fday}
+                            </div>
+                            <div class="form-group">
+                                <label>合同金额</label>-->{$contract.c_price}
+                            </div>
+                            <div class="form-group">
+                                <label>发票编号</label>-->{$contract.i_no}
+                            </div>
+                            <div class="form-group">
+                                <label>合同状态</label>-->{$contract.c_status}
+                            </div>                            
+                    </div>
+                    <div class="box-body table-responsive">                        
+                        <table id="tabsum" class="table table-bordered table-hover text-left">
+                            <thead>
+                            <tr>
+                                <th class="text-center">产品名称</th>
+                                <th class="text-center">产品规格</th>
+                                <th class="text-center">类型</th>
+                                <th class="text-center">产品单价</th>
+                                <th class="text-center">产品数量</th>
+                                <th class="text-center">金额</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <volist name="contractpluses" id="contractplus">
+                                <tr>
+                                    <td>{$contractplus.c_name}</td>
+                                    <td>{$contractplus.c_guige}</td>
+                                    <td>{$contractplus.c_type}</td>
+                                    <td>{$contractplus.c_price}</td>
+                                    <td>{$contractplus.c_number}</td>
+                                    <td name="c_t">{$contractplus.c_total}</td>
+                                </tr>
+                            </volist>                            
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td class="text-center"><b>合计金额</b></td>
+                                <td id="hjje"></td>
+                            </tr>
+                            <script>
+                                var sum = 0.00;
+                                var tab = document.getElementById('tabsum');
+                                var rows = tab.rows;
+                                for(var i = 1; i<rows.length-1; i++ ){
+                                	sum = sum + parseFloat(rows[i].cells[5].innerHTML);                                   
+                                }
+                                document.getElementById('hjje').innerHTML = sum;
+                            </script>
+                            </tbody>
+                        </table>
+                        <div class="form-group">                                
+                                <button class="btn btn-primary btn-sm" onclick="javascript:window.history.go(-1)">返回</button>
+                        </div>
+                    </div><!-- /.box-body -->
+                </div>
+            </div>
+        </div>
+    </section>
+</aside><!-- /.right-side -->
+<include file="layout/footer" />

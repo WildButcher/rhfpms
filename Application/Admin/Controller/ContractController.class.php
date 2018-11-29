@@ -300,4 +300,28 @@ class ContractController extends Controller {
         $exportExcel = new DataToExcel();
         $exportExcel->exportexcel($exportData, $title, $filename);
     }
+    
+    /*
+     * 方法作用：显示合同和明细
+     * @param $id 合同的id
+     * 输出：合同与合同明细，按照2个变量返回前台
+     */
+    public function detail($id){
+        // 先查询合同信息
+        $Form = M('contract');
+        $contract = $Form->find($id);
+        // 再查询合同明细
+        $Form = M('contract_add');
+        $wheresql['c_id'] = $id;
+        $rs = $Form->where($wheresql)->order('id DESC')->select();
+        
+        // 将2个变量返回前台
+        if ($contract) {
+            $this->assign('contract', $contract);
+            $this->assign('contractpluses', $rs);
+            $this->display('contract/contractDetail');
+        } else {
+            $this->error('展示合同与明细读取错误！');
+        }
+    }
 }

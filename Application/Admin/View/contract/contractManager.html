@@ -87,7 +87,7 @@
                                         <button class="btn btn-facebook btn-sm" onclick="location='__APP__/Admin/ContractPlus/Index/id/{$contract.id}'"><i class="fa fa-plus-square"></i></button>
                                     </td>
                                     <td class="text-center">{$i}</td>
-                                    <td>{$contract.p_name}</td>
+                                    <td><a href='__CONTROLLER__/detail/id/{$contract.id}'>{$contract.p_name}</a></td>
                                     <td>{$contract.c_date}</td>
                                     <td>{$contract.c_price}</td>
                                     <td>{$contract.i_no}</td>
