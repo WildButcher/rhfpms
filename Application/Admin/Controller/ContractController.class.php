@@ -208,13 +208,14 @@ class ContractController extends Controller {
     }
     
     /**
-     * 合同签订后形成生产计划
+     * 合同签订后形成生产计划,如果合同中包含模具,则加入模具信息表
      *
      * @param unknown $records            
      */
     public function contractSigned($records){
         $Form = D('v_contract_plan');
         $plan = M('productionplan');
+        $moulds = M('moulds');
         $map['id'] = array(
                 'in',
                 $records
@@ -228,6 +229,21 @@ class ContractController extends Controller {
             $plandata['p_stardate'] = $x['c_date'];
             $plandata['p_plandate'] = $x['c_fday'];
             $plandata['p_status'] = '生产中';
+            // 以上为插入生产计划
+            if ($x['c_type'] == '模具') {
+                $mouldsdata['cid'] = $x['p_id'];
+                $mouldsdata['m_name'] = $x['c_name'];
+                $mouldsdata['m_guige'] = $x['c_guige'];
+                $mouldsdata['m_date'] = $x['c_date'];
+                $mouldsdata['m_price'] = $x['c_price'];
+                if ($moulds->create($mouldsdata)) {
+                    $resu = $moulds->add();
+                    if (! $resu) {
+                        $this->error('增添模具失败错误！');
+                    }
+                }
+            }
+            // 以上为如果有模具类别则插入模具表
             if ($plan->create($plandata)) {
                 $result = $plan->add();
                 if (! $result) {

@@ -1,17 +1,18 @@
 <?php
+
 namespace Admin\Controller;
+
 use Think\Controller;
 
 class GoodsController extends Controller {
-    public function _initialize()
-    {
+    public function _initialize(){
         $this->assign('shangpin', 'active');
-        if (!session('uid')) {
+        if (! session('uid')) {
             header("Content-type: text/html; charset=utf-8");
             redirect(U('/Home/index'), 2, '你还未登录，请先登录！2秒后跳转...');
         }
     }
-
+    
     /*
      * 方法作用：展示产品信息列表
      * 输入：request
@@ -20,15 +21,15 @@ class GoodsController extends Controller {
     public function index(){
         $Form = M('goods');
         $count = $Form->order('id DESC')->count();
-        $Page = new \Think\Page($count,25);
-
+        $Page = new \Think\Page($count, 25);
+        
         $show = $Page->show();
-        $list = $Form->order('id DESC')->limit($Page->firstRow.','.$Page->listRows)->select();
+        $list = $Form->order('id DESC')->limit($Page->firstRow . ',' . $Page->listRows)->select();
         $this->assign('goodses', $list);
-        $this->assign('page',$show);
+        $this->assign('page', $show);
         $this->display('goods/goodsManager');
     }
-
+    
     /*
      * 方法作用：按照产品规格查询
      * 输入：产品规格
@@ -36,17 +37,19 @@ class GoodsController extends Controller {
      */
     public function recordSearch($p_guige){
         $Form = M('goods');
-        if($p_guige!=''){
-            $wheresql['p_guige'] = array('like','%'.$p_guige.'%');
+        if ($p_guige != '') {
+            $wheresql['p_guige'] = array(
+                    'like',
+                    '%' . $p_guige . '%'
+            );
             $rs = $Form->where($wheresql)->order('id DESC')->select();
-        }else{
+        } else {
             $rs = $Form->order('id DESC')->select();
         }
         $this->assign('goodses', $rs);
         $this->display('goods/goodsManager');
-
     }
-
+    
     /*
      * 方法作用：删除产品记录
      * 输入：产品id
@@ -54,11 +57,11 @@ class GoodsController extends Controller {
      */
     public function recordDelete($id){
         $Form = M('goods');
-        if($Form->delete($id)){
+        if ($Form->delete($id)) {
             $this->redirect('Goods/Index');
         }
     }
-
+    
     /*
      * 方法作用：展示新增页面
      * 输入：request
@@ -67,7 +70,7 @@ class GoodsController extends Controller {
     public function recordNew(){
         $this->display('goods/goodsAdd');
     }
-
+    
     /*
      * 方法作用：增加一条记录到数据库
      * 输入：产品信息
@@ -75,18 +78,18 @@ class GoodsController extends Controller {
      */
     public function recordInsert(){
         $Form = D('goods');
-        if($Form->create()){
+        if ($Form->create()) {
             $result = $Form->add();
             if ($result) {
                 $this->redirect('Goods/Index');
             } else {
                 $this->error('产品信息添加错误！');
             }
-        }else{
+        } else {
             $this->error($Form->getError());
         }
     }
-
+    
     /*
      * 方法作用：从模具库中导入产品库
      * 输入：模具库的所有规格模具
@@ -95,25 +98,31 @@ class GoodsController extends Controller {
     public function impFromMoulds(){
         $mouldsForm = M('moulds');
         $goodsForm = M('goods');
-
+        
         $moulds = $mouldsForm->select();
         $goods = $goodsForm->select();
-
-        for($j=0;$j<count($moulds);$j++){
-            if(count($goods)==0){
-                $dataList[] = array('p_name'=>$moulds[$j]['m_name'],'p_guige'=>$moulds[$j]['m_guige']);
-            }else{
-                for($i=0;$i<count($goods);$i++){
-                    if($moulds[$j]['m_guige']!=$goods['$i']['p_guige']){
-                        $dataList[] = array('p_name'=>$moulds[$j]['m_name'],'p_guige'=>$moulds[$j]['m_guige']);
+        
+        for($j = 0; $j < count($moulds); $j ++) {
+            if (count($goods) == 0) {
+                $dataList[] = array(
+                        'p_name'=>$moulds[$j]['m_name'],
+                        'p_guige'=>$moulds[$j]['m_guige']
+                );
+            } else {
+                for($i = 0; $i < count($goods); $i ++) {
+                    if ($moulds[$j]['m_guige'] != $goods['$i']['p_guige']) {
+                        $dataList[] = array(
+                                'p_name'=>$moulds[$j]['m_name'],
+                                'p_guige'=>$moulds[$j]['m_guige']
+                        );
                     }
                 }
             }
         }
         $goodsForm->addAll($dataList);
-        $this->redirect('Goods/Index','从模具库导入产品成功！');
+        $this->redirect('Goods/Index', '从模具库导入产品成功！');
     }
-
+    
     /*
      * 方法作用：展示修改页面
      * 输入：id
@@ -122,14 +131,14 @@ class GoodsController extends Controller {
     public function recordShow($id){
         $Form = M('goods');
         $goods = $Form->find($id);
-        if($goods){
+        if ($goods) {
             $this->assign('goods', $goods);
             $this->display('goods/goodsEdit');
-        }else{
+        } else {
             $this->error('产品资料信息读取错误！');
         }
     }
-
+    
     /*
      * 方法作用：修改一条记录信息
      * 输入：form
@@ -137,45 +146,46 @@ class GoodsController extends Controller {
      */
     public function recordUpdate(){
         $Form = D('goods');
-        if($Form->create()){
+        if ($Form->create()) {
             $result = $Form->save();
             if ($result) {
                 $this->redirect('Goods/Index');
             } else {
                 $this->error('客户信息修改错误！');
             }
-        }else{
+        } else {
             $this->error($Form->getError());
         }
     }
-
-
+    
     /*
      * 方法作用：检查规格是否在产品库中存在
      * 输入：模具规格
      * 输出：产品库中是否存在
      */
     private function uniqueP_guige($guige){
-
     }
-
+    
     /*
      * 方法作用：Aja请求返回整个产品，并以表格形式展现
      * 输入：ajax请求的产品名称可以为空
      * 输出：table格式的字符串
      */
     public function listForAjax($c_guige){
-        $Form = M('goods');
-        if($c_guige!=''){
-            $wheresql['p_guige'] = array('like','%'.$c_guige.'%');
-            $rs = $Form->where($wheresql)->field('id,p_name,p_guige,p_price')->order('id DESC')->select();
-        }else{
-            $rs = $Form->field('id,p_name,p_guige,p_price')->order('id DESC')->select();
+        $Form = M('v_search_product');
+        if ($c_guige != '') {
+            $wheresql['c_guige'] = array(
+                    'like',
+                    '%' . $c_guige . '%'
+            );
+            $rs = $Form->where($wheresql)->field('id,p_name,c_guige,c_price')->order('id DESC')->select();
+        } else {
+            $rs = $Form->field('id,p_name,c_guige,c_price')->order('id DESC')->select();
         }
-        if($rs) {
+        if ($rs) {
             $this->ajaxReturn($rs);
-        }else{
-            $this->ajaxReturn(0,'无数据',0);
+        } else {
+            $this->ajaxReturn(0, '无数据', 0);
         }
     }
 }
