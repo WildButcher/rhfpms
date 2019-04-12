@@ -1,0 +1,56 @@
+<include file="layout/header" />
+<script language="javascript">
+function fungoback(){
+    window.location.href = "/Admin/Contract"; 
+}
+</script>
+<!-- Right side column. Contains the navbar and content of the page -->
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            发票开具
+            <small>Invoice Out</small>
+        </h1>
+    </section>
+    <section class="content" id="bbb">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body table-responsive">
+                        <form role="form" action="__CONTROLLER__/invoiceOut" method="post" name="form1">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>客户名称</label>
+                                <input type="hidden" id="sid" name="sid" value="{$sid}"/>
+                                <input type="text" id="p_name" name="p_name" class="form-control" value="{$p_name}" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label>开票日期</label><br/>
+                                <input name="create_date" type="text" class="Wdate" onClick="WdatePicker()" />
+                            </div>
+                            <div class="form-group">
+                                <label>合同金额</label>
+                                <input type="text" name="i_price" class="form-control" value="{$i_price}" readonly />
+                            </div>
+                            <div class="form-group">
+                                <label>发票编号</label>
+                                <input type="text" name="i_no" class="form-control" placeholder="请输入...">
+                            </div>
+                            <div class="form-group">
+                                <label>合同数量</label>
+                                <input type="text" name="c_num" class="form-control" value="{$c_num}" readonly />
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-primary btn-sm" value="开票">
+                            </div>
+                        </form>
+                        <div>                                
+                                <button class="btn btn-primary btn-sm" onclick="fungoback();">返回</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</aside><!-- /.right-side -->
+<include file="layout/footer" />

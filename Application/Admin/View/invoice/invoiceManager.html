@@ -1,0 +1,66 @@
+<include file="layout/header" />
+<!-- Right side column. Contains the navbar and content of the page -->
+<script language="javascript">
+    /*
+     * 方法作用：导出excel
+     */
+    function exportExcel(){
+        var str = "__CONTROLLER__/toExcel";
+        $("#formContractList").attr("action", str);
+        $("#formContractList").submit();
+    }
+
+
+</script>
+<aside class="right-side">
+    <section class="content-header">
+        <h1>
+            发票管理
+            <small>Invoice Manager</small>
+        </h1>
+    </section>
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body table-responsive">
+                        <button class="btn btn-app btn-sm" onclick="exportExcel()">导出</button>
+                        <form method="post" action="__CONTROLLER__/recordSearch" role="form" id="formInvoiceList">
+                            <input type="text" name="p_name" class="form-control" placeholder="请输入查找的单位/公司名称...">
+                            <input type="hidden" id="sid" name="sid"/>
+                            <input type="submit" class="btn btn-primary btn-sm" value="查找"/>
+                        </form>
+                        <table id="example2" class="table table-bordered table-hover text-left">
+                            <thead>
+                            <tr>
+                                <th class="text-center">序号</th>
+                                <th class="text-center">客户名称</th>
+                                <th class="text-center">开票日期</th>
+                                <th class="text-center">开票金额</th>
+                                <th class="text-center">发票编号</th>
+                                <th class="text-center">合同数量</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <volist name="invoices" id="invoice">
+                                <tr>
+                                    <td class="text-center">{$i}</td>
+                                    <td><a href='__CONTROLLER__/detail/id/{$invoice.id}'>{$invoice.p_name}</a></td>
+                                    <td>{$invoice.create_date}</td>
+                                    <td>{$invoice.i_price}</td>
+                                    <td>{$invoice.i_no}</td>
+                                    <td>{$invoice.c_num}</td>
+                                </tr>
+                            </volist>
+                            </tbody>
+                        </table>
+                        <div class="text-center pagelist">
+                            　　{$page}
+                        </div>
+                    </div><!-- /.box-body -->
+                </div><!-- /.box -->
+            </div>
+        </div>
+    </section>
+</aside><!-- /.right-side -->
+<include file="layout/footer" />

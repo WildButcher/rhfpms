@@ -117,6 +117,16 @@
                                 <li><a href="/Admin/Contract"><i class="fa fa-angle-double-right"></i>合同签订</a></li>
                             </ul>
                         </li>
+                        <li class="treeview <?php echo ($shengchan); ?>">
+                            <a href="#">
+                                <i class="fa fa-files-o"></i>
+                                <span>生产管理</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/Admin/Productionplan"><i class="fa fa-angle-double-right"></i>生产计划</a></li>
+                            </ul>
+                        </li>
                         <li class="treeview <?php echo ($employee); ?>">
                             <a href="#">
                                 <i class="fa fa-files-o"></i>
@@ -174,8 +184,8 @@
                         <div class="col-xs-9">
                             <div class="box">
                                 <div class="box-body table-responsive">
-                                    <button class="btn btn-app btn-sm" onclick="location='/admin/moulds/mouldsAdd/cid/<?php echo ($cid); ?>'">新增</button>
-                                    <button class="btn btn-app btn-sm" onclick="location='/admin/moulds/toExcel/cid/<?php echo ($cid); ?>'">导出</button>
+                                    <button class="btn btn-app btn-sm" onclick="location='/Admin/Moulds/mouldsAdd/cid/<?php echo ($cid); ?>'">新增</button>
+                                    <button class="btn btn-app btn-sm" onclick="location='/Admin/Moulds/toExcel/cid/<?php echo ($cid); ?>'">导出</button>
                                     <h4>
                                         以下是【<?php echo ($c_name["c_name"]); ?>】所属的<?php echo ($mouldsCount); ?>个模具：
                                     </h4>
@@ -193,8 +203,8 @@
                                         <tbody>
                                         <?php if(is_array($moulds)): $i = 0; $__LIST__ = $moulds;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$mould): $mod = ($i % 2 );++$i;?><tr>
                                             <td>
-                                                <button class="btn btn-danger btn-sm" onclick="location='/admin/moulds/mouldsDel/i/<?php echo ($mould["id"]); ?>/cid/<?php echo ($cid); ?>'"><i class="fa fa-times"></i></button>
-                                                <button class="btn btn-success btn-sm" onclick="location='/admin/moulds/mouldsShow/i/<?php echo ($mould["id"]); ?>/cid/<?php echo ($cid); ?>'"><i class="fa fa-edit"></i></button>
+                                                <button class="btn btn-danger btn-sm" onclick="location='/Admin/Moulds/mouldsDel/i/<?php echo ($mould["id"]); ?>/cid/<?php echo ($cid); ?>'"><i class="fa fa-times"></i></button>
+                                                <button class="btn btn-success btn-sm" onclick="location='/Admin/Moulds/mouldsShow/i/<?php echo ($mould["id"]); ?>/cid/<?php echo ($cid); ?>'"><i class="fa fa-edit"></i></button>
                                             </td>
                                             <td><?php echo ($i); ?></td>
                                             <td><?php echo ($mould["m_name"]); ?></td>

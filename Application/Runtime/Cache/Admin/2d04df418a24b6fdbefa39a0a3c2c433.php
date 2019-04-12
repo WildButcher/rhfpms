@@ -26,10 +26,11 @@
 
         <!-- Theme style -->
         <link href="/Public/css/AdminLTE.css" rel="stylesheet" type="text/css" />
-
+        
+            
         <!-- Dtree JavaScript -->
         <script type="text/javascript" src="/Public/js/dtree.js"></script>
-
+        
         <script type="text/javascript" src="/Public/js/myjs.js"></script>
         <script type="text/javascript" src="/Public/js/Chart.js"></script>
         <script type="text/javascript" src="/Public/js/WdatePicker.js"></script>
@@ -115,6 +116,16 @@
                                 <li><a href="/Admin/Contract"><i class="fa fa-angle-double-right"></i>合同签订</a></li>
                             </ul>
                         </li>
+                        <li class="treeview <?php echo ($shengchan); ?>">
+                            <a href="#">
+                                <i class="fa fa-files-o"></i>
+                                <span>生产管理</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/Admin/Productionplan"><i class="fa fa-angle-double-right"></i>生产计划</a></li>
+                            </ul>
+                        </li>
                         <li class="treeview <?php echo ($employee); ?>">
                             <a href="#">
                                 <i class="fa fa-files-o"></i>
@@ -123,6 +134,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="/Admin/Employee"><i class="fa fa-angle-double-right"></i>职工名册</a></li>
+                                <li><a href="/Admin/Employeepay"><i class="fa fa-angle-double-right"></i>薪酬发放</a></li>
                             </ul>
                         </li>
                         <li class="treeview <?php echo ($xitong); ?>">
@@ -194,8 +206,8 @@
     </section>
 </aside><!-- /.right-side -->
                 </div><!-- ./wrapper -->
-		<!-- jQuery 2.0.2 -->
-        <script src="/Public/js/jquery.min.js"></script>
+        <!-- jQuery 2.0.2 -->
+        <script type="text/javascript" src="/Public/js/jquery.min.js"></script> 
         <!-- jQuery UI 1.10.3 -->
         <script src="/Public/js/jquery-ui-1.10.3.min.js" type="text/javascript"></script>
         <!-- Bootstrap -->
@@ -206,8 +218,9 @@
         <!-- Sparkline -->
         <script src="/Public/js/plugins/sparkline/jquery.sparkline.min.js" type="text/javascript"></script>
         <!-- jvectormap -->
+        <script type="text/javascript" src="/Public/js/jquery.vmap.js"></script>
         <script src="/Public/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" type="text/javascript"></script>
-        <script src="/Public/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" type="text/javascript"></script>
+        <script type="text/javascript" src="/Public/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> 
         <!-- fullCalendar -->
         <script src="/Public/js/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
         <!-- jQuery Knob Chart -->
@@ -220,5 +233,6 @@
         <script src="/Public/js/plugins/iCheck/icheck.min.js" type="text/javascript"></script>
         <!-- AdminLTE App -->
         <script src="/Public/js/AdminLTE/app.js" type="text/javascript"></script>
+        
     </body>
 </html>

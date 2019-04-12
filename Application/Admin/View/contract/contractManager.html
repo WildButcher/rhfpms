@@ -18,6 +18,23 @@
         $("#formContractList").submit();
 
     }
+    /*
+     * 开具发票
+     */
+    function invoiceOut(obj){
+    	var str = "__CONTROLLER__/contractInvoice/status/" + obj;
+        $("#formContractList").attr("action", str);
+        var o = document.getElementsByName('selectedOne[]');
+        var sid = new Array();
+        for(x in o){
+            if(o[x].checked == true){
+                sid.push(o[x].value);
+            }
+        }
+        $("#sid").val(sid);
+        $("#formContractList").submit();
+    	
+    }
 
     /*
      * 方法作用：关联报价单。更改提交的表单的action并提交
@@ -53,7 +70,7 @@
                         <button class="btn btn-app btn-sm" onclick="location='__CONTROLLER__/recordNew'">新增</button>
                         <button class="btn btn-app btn-sm" onclick="changeStatus('已签订')">签订</button>
                         <button class="btn btn-app btn-sm" onclick="changeStatus('已发货')">发货</button>
-                        <button class="btn btn-app btn-sm" onclick="changeStatus('已开票')">开票</button>
+                        <button class="btn btn-app btn-sm" onclick="invoiceOut('已开票')">开票</button>
                         <button class="btn btn-app btn-sm" onclick="changeStatus('已回款')">回款</button>
                         <button class="btn btn-app btn-sm" onclick="relationPriceBill()">关联报价单</button>
                         <button class="btn btn-app btn-sm" onclick="exportExcel()">导出</button>

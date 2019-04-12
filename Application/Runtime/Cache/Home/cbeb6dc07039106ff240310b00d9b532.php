@@ -22,7 +22,7 @@
 
         <div class="form-box" id="login-box">
             <div class="header">使用登录</div>
-            <form action="/home/index/login" method="post">
+            <form action="/Home/Index/login" method="post">
                 <div class="body bg-gray">
                     <div class="form-group">
                         <input type="text" name="account" class="form-control" placeholder="User ID"/>

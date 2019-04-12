@@ -116,6 +116,26 @@
                                 <li><a href="/Admin/Contract"><i class="fa fa-angle-double-right"></i>合同签订</a></li>
                             </ul>
                         </li>
+                        <li class="treeview <?php echo ($fapiao); ?>">
+                            <a href="#">
+                                <i class="fa fa-files-o"></i>
+                                <span>发票管理</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/Admin/Invoice"><i class="fa fa-angle-double-right"></i>发票开具</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview <?php echo ($shengchan); ?>">
+                            <a href="#">
+                                <i class="fa fa-files-o"></i>
+                                <span>生产管理</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/Admin/Productionplan"><i class="fa fa-angle-double-right"></i>生产计划</a></li>
+                            </ul>
+                        </li>
                         <li class="treeview <?php echo ($employee); ?>">
                             <a href="#">
                                 <i class="fa fa-files-o"></i>

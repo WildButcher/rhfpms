@@ -207,10 +207,63 @@ class ContractController extends Controller {
         $this->redirect('contract/Index');
     }
     
-    /**
+    /*
+     * 开具发票展示
+     */
+    public function contractInvoice($status){
+        $Form = D('invoice');
+        $con = M('contract');
+        
+        $records = I('sid');
+        $this->assign('sid', $records);
+        $this->assign('status', $status);
+        
+        $map['id'] = array(
+                'in',
+                $records
+        );
+        $len = $con->where($map)->field('p_name')->group('p_name')->select();
+        if (count($len) > 1 || count($len) == 0) {
+            $this->error('同一张发票只能开具一个公司或者单位！');
+        }
+        $c_num = count($con->where($map)->select());
+        $i_price = $con->where($map)->sum('c_price');
+        $this->assign('c_num', $c_num);
+        $this->assign('p_name', $len[0]['p_name']);
+        $this->assign('i_price', $i_price);
+        
+        $this->display('contract/contractInvoice');
+    }
+    
+    /*
+     * 开具发票
+     */
+    public function invoiceOut(){
+        $Form = D('invoice');
+        $con = D('contract');
+        
+        $records = I('sid');
+        $map['id'] = array(
+                'in',
+                $records
+        );
+        $con->where($map)->setField('c_status', '已开票');
+        $con->where($map)->setField('i_no', I('i_no'));
+        if ($Form->create()) {
+            $result = $Form->add();
+            if ($result) {
+                $this->redirect('contract/Index');
+            } else {
+                $this->error('开票发生错误！');
+            }
+        } else {
+            $this->error($Form->getError());
+        }
+    }
+    /*
      * 合同签订后形成生产计划,如果合同中包含模具,则加入模具信息表
      *
-     * @param unknown $records            
+     * @param unknown $records
      */
     public function contractSigned($records){
         $Form = D('v_contract_plan');
@@ -253,10 +306,10 @@ class ContractController extends Controller {
         }
     }
     
-    /**
+    /*
      * 发货以后完成生产计划
      *
-     * @param unknown $records            
+     * @param unknown $records
      */
     public function contractSend($records){
         $plan = M('productionplan');

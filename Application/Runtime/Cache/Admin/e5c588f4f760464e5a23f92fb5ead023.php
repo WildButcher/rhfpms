@@ -116,6 +116,26 @@
                                 <li><a href="/Admin/Contract"><i class="fa fa-angle-double-right"></i>合同签订</a></li>
                             </ul>
                         </li>
+                        <li class="treeview <?php echo ($fapiao); ?>">
+                            <a href="#">
+                                <i class="fa fa-files-o"></i>
+                                <span>发票管理</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/Admin/Invoice"><i class="fa fa-angle-double-right"></i>发票开具</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview <?php echo ($shengchan); ?>">
+                            <a href="#">
+                                <i class="fa fa-files-o"></i>
+                                <span>生产管理</span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="/Admin/Productionplan"><i class="fa fa-angle-double-right"></i>生产计划</a></li>
+                            </ul>
+                        </li>
                         <li class="treeview <?php echo ($employee); ?>">
                             <a href="#">
                                 <i class="fa fa-files-o"></i>
@@ -152,7 +172,7 @@
      * 方法作用：更改form表单的action并提交
      */
     function changeStatus(obj){
-        var str = "/admin/contract/recordChange/status/" + obj;
+        var str = "/Admin/Contract/recordChange/status/" + obj;
         $("#formContractList").attr("action", str);
         var o = document.getElementsByName('selectedOne[]');
         var sid = new Array();
@@ -166,10 +186,28 @@
 
     }
     /*
+     * 开具发票
+     */
+    function invoiceOut(obj){
+    	var str = "/Admin/Contract/contractInvoice/status/" + obj;
+        $("#formContractList").attr("action", str);
+        var o = document.getElementsByName('selectedOne[]');
+        var sid = new Array();
+        for(x in o){
+            if(o[x].checked == true){
+                sid.push(o[x].value);
+            }
+        }
+        $("#sid").val(sid);
+        $("#formContractList").submit();
+    	
+    }
+
+    /*
      * 方法作用：关联报价单。更改提交的表单的action并提交
      */
     function relationPriceBill(){
-        var str = "/admin/contract/relationShow";
+        var str = "/Admin/Contract/relationShow";
         $("#formContractList").attr("action", str);
         $("#formContractList").submit();
     }
@@ -177,7 +215,7 @@
      * 方法作用：导出excel
      */
     function exportExcel(){
-        var str = "/admin/contract/toExcel";
+        var str = "/Admin/Contract/toExcel";
         $("#formContractList").attr("action", str);
         $("#formContractList").submit();
     }
@@ -196,13 +234,14 @@
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-body table-responsive">
-                        <button class="btn btn-app btn-sm" onclick="location='/admin/contract/recordNew'">新增</button>
-                        <button class="btn btn-app btn-sm" onclick="changeStatus('签订')">签订</button>
-                        <button class="btn btn-app btn-sm" onclick="changeStatus('已开票')">开票</button>
+                        <button class="btn btn-app btn-sm" onclick="location='/Admin/Contract/recordNew'">新增</button>
+                        <button class="btn btn-app btn-sm" onclick="changeStatus('已签订')">签订</button>
+                        <button class="btn btn-app btn-sm" onclick="changeStatus('已发货')">发货</button>
+                        <button class="btn btn-app btn-sm" onclick="invoiceOut('已开票')">开票</button>
                         <button class="btn btn-app btn-sm" onclick="changeStatus('已回款')">回款</button>
                         <button class="btn btn-app btn-sm" onclick="relationPriceBill()">关联报价单</button>
                         <button class="btn btn-app btn-sm" onclick="exportExcel()">导出</button>
-                        <form method="post" action="/admin/contract/recordSearch" role="form" id="formContractList">
+                        <form method="post" action="/Admin/Contract/recordSearch" role="form" id="formContractList">
                             <input type="text" name="p_name" class="form-control" placeholder="请输入查找的单位/公司名称...">
                             <input type="hidden" id="sid" name="sid"/>
                             <input type="submit" class="btn btn-primary btn-sm" value="查找"/>
@@ -226,12 +265,12 @@
                             <?php if(is_array($contracts)): $i = 0; $__LIST__ = $contracts;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$contract): $mod = ($i % 2 );++$i;?><tr>
                                     <td class="text-center">
                                         <input type="checkbox" name="selectedOne[]" value="<?php echo ($contract["id"]); ?>" />
-                                        <button class="btn btn-danger btn-sm" onclick="location='/admin/contract/recordDelete/id/<?php echo ($contract["id"]); ?>'"><i class="fa fa-times"></i></button>
-                                        <button class="btn btn-success btn-sm" onclick="location='/admin/contract/recordShow/id/<?php echo ($contract["id"]); ?>'"><i class="fa fa-edit"></i></button>
+                                        <button class="btn btn-danger btn-sm" onclick="location='/Admin/Contract/recordDelete/id/<?php echo ($contract["id"]); ?>'"><i class="fa fa-times"></i></button>
+                                        <button class="btn btn-success btn-sm" onclick="location='/Admin/Contract/recordShow/id/<?php echo ($contract["id"]); ?>'"><i class="fa fa-edit"></i></button>
                                         <button class="btn btn-facebook btn-sm" onclick="location='/Admin/ContractPlus/Index/id/<?php echo ($contract["id"]); ?>'"><i class="fa fa-plus-square"></i></button>
                                     </td>
                                     <td class="text-center"><?php echo ($i); ?></td>
-                                    <td><?php echo ($contract["p_name"]); ?></td>
+                                    <td><a href='/Admin/Contract/detail/id/<?php echo ($contract["id"]); ?>'><?php echo ($contract["p_name"]); ?></a></td>
                                     <td><?php echo ($contract["c_date"]); ?></td>
                                     <td><?php echo ($contract["c_price"]); ?></td>
                                     <td><?php echo ($contract["i_no"]); ?></td>
