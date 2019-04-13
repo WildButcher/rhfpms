@@ -12,7 +12,7 @@ class InvoiceController extends Controller {
             redirect(U('/Home/index'), 2, '你还未登录，请先登录！2秒后跳转...');
         }
     }
-    
+
     /**
      * 展示开票历史信息
      */
@@ -25,5 +25,20 @@ class InvoiceController extends Controller {
         $this->assign('invoices', $rs);
         $this->assign('page', $show);
         $this->display('invoice/invoiceManager');
+    }
+
+    /**
+     * 显示具体发票信息
+     */
+    public function detail($id){
+        $invoice = M('invoice');        //读取单位信息、总金额等
+        $Form = M('v_invoice_detail');  //读取发票详细信息
+        $wheresql['id']=$id;
+        $details = $Form->where($wheresql)->select();
+        $one = $invoice->find($id);
+
+        $this->assign('invoice', $one);
+        $this->assign('details',$details);
+        $this->display('invoice/invoiceDetail');
     }
 }

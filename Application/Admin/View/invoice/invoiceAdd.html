@@ -1,7 +1,5 @@
 <include file="layout/header" />
-<!--
-    以下js用于ajax动态查询
--->
+
 <script language="javascript">
     /*
      * 方法作用：单位名称文本框失去焦点后隐藏div
@@ -13,20 +11,15 @@
     }
 
     function fungoback(){
-    	  window.location.href = "/Admin/Invoice"; 
+    	  window.location.href = "/Admin/Invoice";
     }
-    /*
-     * 方法作用：通过ajax获取后台的【已签订合同的客户】数据列表，并用js拼凑为一个table，table的tr有onclick方法调用。拼凑完毕后增加到隐藏div中。
-     * 输入：obj文本框对象本身
-     * 输出：显现div层，并且数据为数据库中查询的数据列表即单位名称
-     */
 
 </script>
 <!-- Right side column. Contains the navbar and content of the page -->
 <aside class="right-side">
     <section class="content-header">
         <h1>
-            合同签订
+            开具发票
             <small>Contract In</small>
         </h1>
     </section>
@@ -72,7 +65,7 @@
                                 <input type="submit" class="btn btn-primary btn-sm" value="保存">
                             </div>
                         </form>
-                        <div>                                
+                        <div>
                                 <button class="btn btn-primary btn-sm" onclick="fungoback();">返回</button>
                         </div>
                     </div>
