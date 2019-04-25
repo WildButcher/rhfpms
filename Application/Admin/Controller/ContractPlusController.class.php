@@ -67,17 +67,30 @@ class ContractPlusController extends Controller {
             $this->error($Form->getError());
         }
     }
-    
+
     /*
      * 方法作用：查询模具规格
      * 输入：模具规格
      * 输出：查询结果列表，包括合同信息
-     *  
+     *
      */
     public function searchViewList($c_guige){
         $Form = M('v_search_product');
         $wheresql['c_guige'] = array('like','%'.$c_guige.'%');
         $moulds = $Form->where($wheresql)->order('id DESC')->select();
+        $this->assign('moulds', $moulds);
+        $this->display('moulds/mouldsViewList');
+    }
+
+    /**
+     * 方法作用：查询需求公司历史采购产品
+     * 输入：需求公司名称
+     * 输出：查询结果列表，包括合同信息
+     */
+    public function searchPname($p_name){
+        $Form = M('v_search_product');
+        $wheresql['p_name'] = array('like','%'.$p_name.'%');
+        $moulds = $Form->where($wheresql)->order('c_date DESC')->select();
         $this->assign('moulds', $moulds);
         $this->display('moulds/mouldsViewList');
     }

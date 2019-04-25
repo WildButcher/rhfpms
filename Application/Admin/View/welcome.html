@@ -27,7 +27,21 @@
                                 <div class="text-center">销售查询:</div>
                                 <form method="post" action="__APP__/Admin/ContractPlus/searchViewList">
                                     <div class="input-group margin box-body">
+                                        <span class="input-group-btn">
+                                          <label>产品规格：</label>
+                                        </span>
                                         <input type="text" class="form-control" name="c_guige">
+                                        <span class="input-group-btn">
+                                          <button type="submit" class="btn btn-info btn-flat" onclick="">查询</button>
+                                        </span>
+                                    </div>
+                                </form>
+                                <form method="post" action="__APP__/Admin/ContractPlus/searchPname">
+                                    <div class="input-group margin box-body">
+                                        <span class="input-group-btn">
+                                          <label>需求单位：</label>
+                                        </span>
+                                        <input type="text" class="form-control" name="p_name">
                                         <span class="input-group-btn">
                                           <button type="submit" class="btn btn-info btn-flat" onclick="">查询</button>
                                         </span>
@@ -142,7 +156,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>                    
+                    </div>
                 </section>
             </aside><!-- /.right-side -->
 <include file="layout/footer" />

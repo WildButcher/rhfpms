@@ -33,7 +33,7 @@
         }
         $("#sid").val(sid);
         $("#formContractList").submit();
-    	
+
     }
 
     /*
@@ -72,7 +72,6 @@
                         <button class="btn btn-app btn-sm" onclick="changeStatus('已发货')">发货</button>
                         <button class="btn btn-app btn-sm" onclick="invoiceOut('已开票')">开票</button>
                         <button class="btn btn-app btn-sm" onclick="changeStatus('已回款')">回款</button>
-                        <button class="btn btn-app btn-sm" onclick="relationPriceBill()">关联报价单</button>
                         <button class="btn btn-app btn-sm" onclick="exportExcel()">导出</button>
                         <form method="post" action="__CONTROLLER__/recordSearch" role="form" id="formContractList">
                             <input type="text" name="p_name" class="form-control" placeholder="请输入查找的单位/公司名称...">
