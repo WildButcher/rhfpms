@@ -1,0 +1,91 @@
+<include file="layout/header" />
+            <!-- Right side column. Contains the navbar and content of the page -->
+            <aside class="right-side">
+                <section class="content-header">
+                    <h1>
+                        投标报价管理
+                        <small>Bid Manager</small>
+                    </h1>
+                </section>
+                <section class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="box">
+                                <div class="box-body table-responsive">
+                                    <div class="box">
+                                        <div class="box-body table-responsive">
+                                            <ul class="nav nav-tabs">
+                                                  <li role="presentation" class="active"><a href="__CONTROLLER__/">矩形</a></li>
+                                                  <li role="presentation"><a href="__CONTROLLER__/">圆柱</a></li>
+                                            </ul>
+                                        </div>
+                                        <form class="" action="index.html" method="post">
+                                            <div class="box-body table-responsive">
+                                                    <label>产品材料：</label>
+                                                    <input type="radio" name="c" value="">天然胶
+                                                    <input type="radio" name="c" value="">丁晴胶
+                                                    <input type="radio" name="c" value="">硅橡胶
+                                                    <input type="radio" name="c" value="">氟橡胶
+                                            </div>
+                                            <div class="box-body table-responsive">
+                                                <label>长(mm)：</label>
+                                                <div class="">
+                                                    <input class="" type="text" name="l" value="">
+                                                </div>
+                                                <label>宽(mm)：</label>
+                                                <div class="">
+                                                    <input class="" type="text" name="w" value="">
+                                                </div>
+                                                <label>高(mm)：</label>
+                                                <div class="">
+                                                    <input class="" type="text" name="h" value="">
+                                                </div>
+                                                <label>底(mm)：</label>
+                                                <div class="">
+                                                    <input class="" type="text" name="b" value="">
+                                                </div>
+                                                <label>壁厚(mm)：</label>
+                                                <div class="">
+                                                    <input class="" type="text" name="r" value="">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <button class="btn btn-app btn-sm" onclick="location='__CONTROLLER__/recordNew'">新增</button>
+                                    <form method="post" action="__CONTROLLER__/recordSearch" role="form" name="c_search">
+                                        <input type="text" name="c_name" class="form-control" placeholder="请输入查找的单位/公司名称...">
+                                        <input type="submit" class="btn btn-primary btn-sm" value="查找"/>
+                                    </form>
+                                    <table id="example2" class="table table-bordered table-hover text-left">
+                                        <thead>
+                                        <tr>
+                                            <th class="text-center">操作</th>
+                                            <th class="text-center">客户名称</th>
+                                            <th class="text-center">报价金额</th>
+                                            <th class="text-center">报价日期</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <volist name="bids" id="bid">
+                                        <tr>
+                                            <td class="text-center">
+                                                <button class="btn btn-danger btn-sm" onclick="location='__CONTROLLER__/recordDelete/id/{$bid.id}'"><i class="fa fa-times"></i></button>
+                                            </td>
+                                            <td><a href="#" onclick="location='__CONTROLLER__/recordShow/id/{$bid.id}'">{$bid.c_name}</a></td>
+                                            <td>{$bid.c_addr}</td>
+                                            <td>{$bid.c_linkman}</td>
+                                            <td>{$bid.c_linkmobile}</td>
+                                        </tr>
+                                        </volist>
+                                        </tbody>
+                                    </table>
+                                    <div class="text-center pagelist">
+                                        　　{$page}
+                                    </div>
+                                </div><!-- /.box-body -->
+                            </div><!-- /.box -->
+                        </div>
+                    </div>
+                </section>
+            </aside><!-- /.right-side -->
+<include file="layout/footer" />
