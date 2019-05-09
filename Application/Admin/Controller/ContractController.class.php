@@ -12,7 +12,7 @@ class ContractController extends Controller {
             redirect(U('/Home/index'), 2, '你还未登录，请先登录！2秒后跳转...');
         }
     }
-    
+
     /*
      * 方法作用：展示合同信息列表
      * 输入：request
@@ -28,7 +28,7 @@ class ContractController extends Controller {
         $this->assign('page', $show);
         $this->display('contract/contractManager');
     }
-    
+
     /*
      * 方法作用：查看合同信息列表,用于手机查看
      * 输入：request
@@ -49,7 +49,7 @@ class ContractController extends Controller {
                 'like',
                 '%' . $c_date . '%'
         );
-        
+
         $count = $Form->where($wheresql)->order('id DESC')->count();
         $Page = new \Think\Page($count, 25);
         $show = $Page->show();
@@ -58,7 +58,7 @@ class ContractController extends Controller {
         $this->assign('page', $show);
         $this->display('contract/contractView');
     }
-    
+
     /*
      * 方法作用：按照公司名字查询用于手机
      * 输入：公司名字
@@ -84,7 +84,7 @@ class ContractController extends Controller {
             $this->display('contract/contractView');
         }
     }
-    
+
     /*
      * 方法作用：按照公司名字查询
      * 输入：公司名字
@@ -110,7 +110,7 @@ class ContractController extends Controller {
             $this->display('contract/contractManager');
         }
     }
-    
+
     /*
      * 方法作用：删除客户记录
      * 输入：客户id
@@ -122,7 +122,7 @@ class ContractController extends Controller {
             $this->redirect('contract/Index');
         }
     }
-    
+
     /*
      * 方法作用：展示新增页面
      * 输入：request
@@ -131,7 +131,7 @@ class ContractController extends Controller {
     public function recordNew(){
         $this->display('contract/contractAdd');
     }
-    
+
     /*
      * 方法作用：展示修改页面
      * 输入：id
@@ -165,7 +165,7 @@ class ContractController extends Controller {
             $this->error($Form->getError());
         }
     }
-    
+
     /*
      * 方法作用：修改一条记录信息
      * 输入：form
@@ -184,7 +184,7 @@ class ContractController extends Controller {
             $this->error($Form->getError());
         }
     }
-    
+
     /*
      * 方法作用：修改合同状态字段
      * 输入：需要修改的状态字段值$status，需要修改的记录表单form数据
@@ -206,18 +206,18 @@ class ContractController extends Controller {
         $Form->where($map)->setField('c_status', $status);
         $this->redirect('contract/Index');
     }
-    
+
     /*
-     * 开具发票展示
+     * 开具发票过程
      */
     public function contractInvoice($status){
         $Form = D('invoice');
         $con = M('contract');
-        
+
         $records = I('sid');
         $this->assign('sid', $records);
         $this->assign('status', $status);
-        
+
         $map['id'] = array(
                 'in',
                 $records
@@ -231,17 +231,17 @@ class ContractController extends Controller {
         $this->assign('c_num', $c_num);
         $this->assign('p_name', $len[0]['p_name']);
         $this->assign('i_price', $i_price);
-        
+
         $this->display('contract/contractInvoice');
     }
-    
+
     /*
      * 开具发票
      */
     public function invoiceOut(){
         $Form = D('invoice');
         $con = D('contract');
-        
+
         $records = I('sid');
         $map['id'] = array(
                 'in',
@@ -263,7 +263,7 @@ class ContractController extends Controller {
     /*
      * 合同签订后形成生产计划,如果合同中包含模具,则加入模具信息表
      *
-     * @param unknown $records
+     * @param 记录id $records
      */
     public function contractSigned($records){
         $Form = D('v_contract_plan');
@@ -296,7 +296,7 @@ class ContractController extends Controller {
                     }
                 }
             }
-            // 以上为如果有模具类别则插入模具表
+            // 以上为如果有模具类别则插入模具表,暂时用中文判断
             if ($plan->create($plandata)) {
                 $result = $plan->add();
                 if (! $result) {
@@ -305,7 +305,7 @@ class ContractController extends Controller {
             }
         }
     }
-    
+
     /*
      * 发货以后完成生产计划
      *
@@ -332,7 +332,7 @@ class ContractController extends Controller {
     public function relationShow(){
         $records = I('sid');
     }
-    
+
     /*
      * 方法作用：导出数据到
      * @param $data 一个二维数组,结构如同从数据库查出来的数组
@@ -353,7 +353,7 @@ class ContractController extends Controller {
         $exportExcel = new DataToExcel();
         $exportExcel->exportexcel($exportData, $title, $filename);
     }
-    
+
     /*
      * 方法作用：显示合同和明细
      * @param $id 合同的id
@@ -367,7 +367,7 @@ class ContractController extends Controller {
         $Form = M('contract_add');
         $wheresql['c_id'] = $id;
         $rs = $Form->where($wheresql)->order('id DESC')->select();
-        
+
         // 将2个变量返回前台
         if ($contract) {
             $this->assign('contract', $contract);
