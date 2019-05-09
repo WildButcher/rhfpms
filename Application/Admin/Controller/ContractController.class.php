@@ -296,7 +296,7 @@ class ContractController extends Controller {
                     }
                 }
             }
-            // 以上为如果有模具类别则插入模具表,暂时用中文判断
+            // 以上为如果有模具类别则插入模具表,暂时用中文来作为判断
             if ($plan->create($plandata)) {
                 $result = $plan->add();
                 if (! $result) {
