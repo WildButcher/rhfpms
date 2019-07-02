@@ -20,26 +20,34 @@ echo $_REQUEST['title'];
 ?></h1>
 	<div>
 		<h2><?php
-
 echo $_REQUEST['company'];
 ?></h2>
-		<h2><?php
-
-echo $_REQUEST['guige'];
-?></h2>
+		<h2>
+			<table id="guige">
+			</table>
+		</h2>
 		<p>发货时间:<?php
-
 echo $_REQUEST['cdate'];
 ?></p>
 	</div>
-	<div id="ttt"></div>
 </body>
 <script type="text/javascript">
 var msg;
 <?php
 echo "msg = '" . $_REQUEST['guige'] . "';";
+var x = document.getElementById("guige");
+var record = msg.split(";");
+var tr;
+for (r in record){
+	var td;
+	var feild = r.split(",");
+	for (let f in feild){
+		td = td + "<td>"+feild[f]+"</td>";
+	}
+	tr = tr + "<tr>" + td +"</tr>";
+}
+x.innerHTML = tr;
 ?>
-var x = document.getElementById("ttt");
-x.innerHTML = msg;
+
 </script>
 </html>
