@@ -12,7 +12,7 @@ class ContractController extends Controller {
             redirect(U('/Home/index'), 2, '你还未登录，请先登录！2秒后跳转...');
         }
     }
-
+    
     /*
      * 方法作用：展示合同信息列表
      * 输入：request
@@ -28,7 +28,7 @@ class ContractController extends Controller {
         $this->assign('page', $show);
         $this->display('contract/contractManager');
     }
-
+    
     /*
      * 方法作用：查看合同信息列表,用于手机查看
      * 输入：request
@@ -49,7 +49,7 @@ class ContractController extends Controller {
                 'like',
                 '%' . $c_date . '%'
         );
-
+        
         $count = $Form->where($wheresql)->order('id DESC')->count();
         $Page = new \Think\Page($count, 25);
         $show = $Page->show();
@@ -58,7 +58,7 @@ class ContractController extends Controller {
         $this->assign('page', $show);
         $this->display('contract/contractView');
     }
-
+    
     /*
      * 方法作用：按照公司名字查询用于手机
      * 输入：公司名字
@@ -84,7 +84,7 @@ class ContractController extends Controller {
             $this->display('contract/contractView');
         }
     }
-
+    
     /*
      * 方法作用：按照公司名字查询
      * 输入：公司名字
@@ -110,7 +110,7 @@ class ContractController extends Controller {
             $this->display('contract/contractManager');
         }
     }
-
+    
     /*
      * 方法作用：删除客户记录
      * 输入：客户id
@@ -122,7 +122,7 @@ class ContractController extends Controller {
             $this->redirect('contract/Index');
         }
     }
-
+    
     /*
      * 方法作用：展示新增页面
      * 输入：request
@@ -131,7 +131,7 @@ class ContractController extends Controller {
     public function recordNew(){
         $this->display('contract/contractAdd');
     }
-
+    
     /*
      * 方法作用：展示修改页面
      * 输入：id
@@ -165,7 +165,7 @@ class ContractController extends Controller {
             $this->error($Form->getError());
         }
     }
-
+    
     /*
      * 方法作用：修改一条记录信息
      * 输入：form
@@ -184,7 +184,7 @@ class ContractController extends Controller {
             $this->error($Form->getError());
         }
     }
-
+    
     /*
      * 方法作用：修改合同状态字段
      * 输入：需要修改的状态字段值$status，需要修改的记录表单form数据
@@ -206,18 +206,18 @@ class ContractController extends Controller {
         $Form->where($map)->setField('c_status', $status);
         $this->redirect('contract/Index');
     }
-
+    
     /*
      * 开具发票过程
      */
     public function contractInvoice($status){
         $Form = D('invoice');
         $con = M('contract');
-
+        
         $records = I('sid');
         $this->assign('sid', $records);
         $this->assign('status', $status);
-
+        
         $map['id'] = array(
                 'in',
                 $records
@@ -231,17 +231,17 @@ class ContractController extends Controller {
         $this->assign('c_num', $c_num);
         $this->assign('p_name', $len[0]['p_name']);
         $this->assign('i_price', $i_price);
-
+        
         $this->display('contract/contractInvoice');
     }
-
+    
     /*
      * 开具发票
      */
     public function invoiceOut(){
         $Form = D('invoice');
         $con = D('contract');
-
+        
         $records = I('sid');
         $map['id'] = array(
                 'in',
@@ -260,12 +260,61 @@ class ContractController extends Controller {
             $this->error($Form->getError());
         }
     }
+    // curl请求函数，微信都是通过该函数请求
+    function https_request($url, $data = null){
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, FALSE);
+        curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, FALSE);
+        if (! empty($data)) {
+            curl_setopt($curl, CURLOPT_POST, 1);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $data);
+        }
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        $output = curl_exec($curl);
+        curl_close($curl);
+        return $output;
+    }
+    
+    // 获取发送数据数组
+    function getDataArray($MsgArray){
+        $data = array(
+                // 要发送给用户的openid
+                'touser'=>$MsgArray["touser"],
+                // 改成自己的模板id，在微信后台模板消息里查看
+                'template_id'=>$MsgArray["template_id"],
+                // 点击模板打开的链接
+                'url'=>$MsgArray["url"],
+                'data'=>array(
+                        'title'=>array(
+                                'value'=>$MsgArray["title"],
+                                'color'=>"#000"
+                        ),
+                        'company'=>array(
+                                'value'=>$MsgArray["company"],
+                                'color'=>"#f00"
+                        ),
+                        'guige'=>array(
+                                'value'=>$MsgArray["guige"],
+                                'color'=>"#f00"
+                        ),
+                        'cdate'=>array(
+                                'value'=>$MsgArray["cdate"],
+                                'color'=>"#173177"
+                        )
+                )
+        );
+        return $data;
+    }
     /*
      * 合同签订后形成生产计划,如果合同中包含模具,则加入模具信息表
      *
      * @param 记录id $records
      */
     public function contractSigned($records){
+        $MsgArray = array();
+        $guige = "";
+        
         $Form = D('v_contract_plan');
         $plan = M('productionplan');
         $moulds = M('moulds');
@@ -277,12 +326,14 @@ class ContractController extends Controller {
         foreach ( $rs as $x ) {
             $plandata['p_customer'] = $x['p_name'];
             $plandata['c_id'] = $x['id'];
+            $plandata['c_type'] = $x['c_type'];
             $plandata['p_guige'] = $x['c_guige'];
             $plandata['p_num'] = $x['c_number'];
             $plandata['p_stardate'] = $x['c_date'];
             $plandata['p_plandate'] = $x['c_fday'];
             $plandata['p_status'] = '生产中';
             // 以上为插入生产计划
+            $guige = $guige . $plandata['p_guige'] . "," . $plandata['c_type'] . "," . $plandata['p_num'] . ";";
             if ($x['c_type'] == '模具') {
                 $mouldsdata['cid'] = $x['p_id'];
                 $mouldsdata['m_name'] = $x['c_name'];
@@ -299,13 +350,56 @@ class ContractController extends Controller {
             // 以上为如果有模具类别则插入模具表,暂时用中文来作为判断
             if ($plan->create($plandata)) {
                 $result = $plan->add();
+                
                 if (! $result) {
                     $this->error('增添生产计划错误！');
                 }
             }
         }
+        
+        /**
+         * 开始推送微信通知
+         */
+        // 替换你的ACCESS_TOKEN
+        $ACCESS_TOKEN = json_decode($this->https_request("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxac2d658e937e3036&secret=fa167a09ef1bde4e3b58255ce5773354"), true)["access_token"];
+        // 模板消息请求URL
+        $url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=" . $ACCESS_TOKEN;
+        
+        // 推送的用户
+        $MsgArray["touser"] = "oj0Jj5iXT7F65JqTHB0n42KQ0iFQ";
+        
+        // 推送的模板编号
+        $MsgArray["template_id"] = "b8pR4Tp2F2Nu3W6ZMKEOMKpkNJtl8mIH9yMB4Ib-OLs";
+        
+        // 标题是可选值
+        if (! isset($_REQUEST['title'])) {
+            $MsgArray["title"] = "新订单";
+        } else {
+            $MsgArray["title"] = $_REQUEST['title'];
+        }
+        // 采购单位
+        $MsgArray["company"] = $plandata['p_customer'];
+        
+        // 完成时间
+        $MsgArray["cdate"] = $plandata['p_plandate'];
+        
+        // 采购的规格
+        $MsgArray["guige"] = $guige;
+        
+        $MsgArray["url"] = "http://pms.ronghuifeng.cn/msg.php?title=" . $MsgArray["title"] . "&company=" . $MsgArray["company"] . "&cdate=" . $MsgArray["cdate"] . "&guige=" . $MsgArray["guige"];
+        // 转化成json数组让微信可以接收
+        $json_data = json_encode($this->getDataArray($MsgArray));
+        $res = $this->https_request($url, urldecode($json_data)); // 请求开始
+        $res = json_decode($res, true);
+        
+        // if ($res['errcode'] == 0 && $res['errcode'] == "ok") {
+        // } else {
+        // }
+    /**
+     * 推送完毕
+     */
     }
-
+    
     /*
      * 发货以后完成生产计划
      *
@@ -332,7 +426,7 @@ class ContractController extends Controller {
     public function relationShow(){
         $records = I('sid');
     }
-
+    
     /*
      * 方法作用：导出数据到
      * @param $data 一个二维数组,结构如同从数据库查出来的数组
@@ -353,7 +447,7 @@ class ContractController extends Controller {
         $exportExcel = new DataToExcel();
         $exportExcel->exportexcel($exportData, $title, $filename);
     }
-
+    
     /*
      * 方法作用：显示合同和明细
      * @param $id 合同的id
@@ -367,7 +461,7 @@ class ContractController extends Controller {
         $Form = M('contract_add');
         $wheresql['c_id'] = $id;
         $rs = $Form->where($wheresql)->order('id DESC')->select();
-
+        
         // 将2个变量返回前台
         if ($contract) {
             $this->assign('contract', $contract);
