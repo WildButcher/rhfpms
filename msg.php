@@ -37,7 +37,7 @@ echo $_REQUEST['cdate'];
 <script type="text/javascript">
 var msg;
 <?php
-echo "msg = '" . $_REQUEST['guige'] . "'";
+echo "msg = '" . $_REQUEST['guige'] . "';";
 ?>
 var x = document.getElementById("ttt");
 x.innerHTML = msg;
