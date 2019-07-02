@@ -49,9 +49,9 @@ class MouldsController extends Controller
             $show = $Page->show();
         }else{
             $mouldsCount = $moulds->where($wheresql)->count();
-            $count = $moulds->where($wheresql)->count();
+            $count = $moulds->where($wheresql)->order('id DESC')->count();
             $Page = new \Think\Page($count,25);
-            $mrs = $moulds->where($wheresql)->limit($Page->firstRow.','.$Page->listRows)->select();
+            $mrs = $moulds->where($wheresql)->limit($Page->firstRow.','.$Page->listRows)->order('id DESC')->select();
             $show = $Page->show();
         }
 
