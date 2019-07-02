@@ -1,31 +1,43 @@
 <?php
 header("Content-Type: text/html;charset=utf-8");
-//此页面是为了处理各种返回值
-if(!isset($_REQUEST['title'])||!isset($_REQUEST['company'])||!isset($_REQUEST['cdate']))
-{
-  exit;
+// 此页面是为了处理各种返回值
+if (! isset($_REQUEST['title']) || ! isset($_REQUEST['company']) || ! isset($_REQUEST['cdate'])) {
+    exit();
 }
 ?>
 <html>
-    <head>
-        <title><?php echo $_REQUEST['title'];?></title>
-        
-    </head>
-    <style>
-        .jumbotron{padding:30px;margin-bottom:30px;color:inherit;background-color:#ecf0f1}
-        .jumbotron p{margin-bottom:15px;font-size:23px;font-weight:200}
-        .jumbotron>hr{border-top-color:#cfd9db}
-        .container .jumbotron{border-radius:6px}.jumbotron 
-        .container{max-width:100%}@media screen and (min-width:768px){.jumbotron{padding-top:48px;padding-bottom:48px}
-        .container .jumbotron{padding-left:60px;padding-right:60px}
-    
-        </style>
-    
-    <h1 style="color: #3290E2;"><?php echo $_REQUEST['title'];?></h1>
-    <hr />
-    <div class="jumbotron">
-      <h2><?php echo $_REQUEST['company'];?></h2>
-	  <?php echo $_REQUEST['guige'];?>
-      <p>发货时间:<?php echo $_REQUEST['cdate'];?></p>
-    </div>
+<head>
+<title><?php
+
+echo $_REQUEST['title'];
+?></title>
+<script type="text/javascript">
+var msg;
+<?php
+echo "msg = '" . $_REQUEST['guige'] . "'";
+?>
+document.write(msg);
+</script>
+</head>
+<body>
+	<h1><?php
+
+echo $_REQUEST['title'];
+?></h1>
+	<div>
+		<h2><?php
+
+echo $_REQUEST['company'];
+?></h2>
+		<h2><?php
+
+echo $_REQUEST['guige'];
+?></h2>
+		<p>发货时间:<?php
+
+echo $_REQUEST['cdate'];
+?></p>
+	</div>
+</body>
+
 </html>
