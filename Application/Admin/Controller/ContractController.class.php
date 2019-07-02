@@ -260,6 +260,7 @@ class ContractController extends Controller {
             $this->error($Form->getError());
         }
     }
+    
     // curl请求函数，微信都是通过该函数请求
     function https_request($url, $data = null){
         $curl = curl_init();
@@ -292,15 +293,15 @@ class ContractController extends Controller {
                         ),
                         'company'=>array(
                                 'value'=>$MsgArray["company"],
-                                'color'=>"#f00"
+                                'color'=>"#000"
                         ),
                         'guige'=>array(
                                 'value'=>$MsgArray["guige"],
-                                'color'=>"#f00"
+                                'color'=>"#000"
                         ),
                         'cdate'=>array(
                                 'value'=>$MsgArray["cdate"],
-                                'color'=>"#173177"
+                                'color'=>"#000"
                         )
                 )
         );
