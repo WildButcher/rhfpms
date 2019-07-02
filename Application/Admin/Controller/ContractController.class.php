@@ -299,6 +299,10 @@ class ContractController extends Controller {
                                 'value'=>$MsgArray["guige"],
                                 'color'=>"#000"
                         ),
+                        'time'=>array(
+                                'value'=>$MsgArray["time"],
+                                'color'=>"#000"
+                        ),
                         'cdate'=>array(
                                 'value'=>$MsgArray["cdate"],
                                 'color'=>"#000"
@@ -307,6 +311,56 @@ class ContractController extends Controller {
         );
         return $data;
     }
+    /**
+     * 微信推送函数
+     *
+     * @param 采购单位 $company            
+     * @param 发货时间 $cdate            
+     * @param 所有的规格 $guige            
+     */
+    public function pushmsg($ACCESS_TOKEN, $company, $cdate, $guige, $touser){
+        /**
+         * 开始推送微信通知
+         */
+        // 模板消息请求URL
+        $url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=" . $ACCESS_TOKEN;
+        
+        // 推送的用户
+        $MsgArray["touser"] = $touser;
+        
+        // 推送的模板编号
+        $MsgArray["template_id"] = "Q5cIcms-QzNLmUwhTdGS5rRHHM1uCDYpM06RsX_jyfQ";
+        
+        // 标题是可选值
+        $MsgArray["title"] = "有新订单啦！";
+        
+        // 采购单位
+        $MsgArray["company"] = $company;
+        
+        // 完成时间
+        $MsgArray["cdate"] = $cdate;
+        
+        // 采购的规格
+        $MsgArray["guige"] = $guige;
+        
+        // 推送时间
+        $MsgArray["time"] = date('Y-m-d h:i:s', time());
+        
+        $MsgArray["url"] = "http://pms.ronghuifeng.cn/msg.php?title=" . $MsgArray["title"] . "&time=" . $MsgArray["time"] . "&company=" . $MsgArray["company"] . "&cdate=" . $MsgArray["cdate"] . "&guige=" . $MsgArray["guige"];
+        
+        // 转化成json数组让微信可以接收
+        $json_data = json_encode($this->getDataArray($MsgArray));
+        $res = $this->https_request($url, urldecode($json_data)); // 请求开始
+        $res = json_decode($res, true);
+        
+        // if ($res['errcode'] == 0 && $res['errcode'] == "ok") {
+        // } else {
+        // }
+    /**
+     * 推送完毕
+     */
+    }
+    
     /*
      * 合同签订后形成生产计划,如果合同中包含模具,则加入模具信息表
      *
@@ -357,48 +411,15 @@ class ContractController extends Controller {
                 }
             }
         }
-        
-        /**
-         * 开始推送微信通知
-         */
-        // 替换你的ACCESS_TOKEN
+        // 替换你的ACCESS_TOKEN,先获取ACCESS_TOKEN然后再取关注用户列表。循环用户列表推送消息
         $ACCESS_TOKEN = json_decode($this->https_request("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxac2d658e937e3036&secret=fa167a09ef1bde4e3b58255ce5773354"), true)["access_token"];
-        // 模板消息请求URL
-        $url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=" . $ACCESS_TOKEN;
-        
-        // 推送的用户
-        $MsgArray["touser"] = "oj0Jj5iXT7F65JqTHB0n42KQ0iFQ";
-        
-        // 推送的模板编号
-        $MsgArray["template_id"] = "b8pR4Tp2F2Nu3W6ZMKEOMKpkNJtl8mIH9yMB4Ib-OLs";
-        
-        // 标题是可选值
-        if (! isset($_REQUEST['title'])) {
-            $MsgArray["title"] = "新订单";
-        } else {
-            $MsgArray["title"] = $_REQUEST['title'];
+        // 获取关注用户列表
+        $users = json_decode($this->https_request("https://api.weixin.qq.com/cgi-bin/user/get?access_token=" . $ACCESS_TOKEN), true)["data"]["openid"];
+        // 循环用户列表推送消息
+        foreach ( $users as $u ) {
+            $this->pushmsg($ACCESS_TOKEN, $plandata['p_customer'], $plandata['p_stardate'], $guige, $u);
         }
-        // 采购单位
-        $MsgArray["company"] = $plandata['p_customer'];
-        
-        // 完成时间
-        $MsgArray["cdate"] = $plandata['p_plandate'];
-        
-        // 采购的规格
-        $MsgArray["guige"] = $guige;
-        
-        $MsgArray["url"] = "http://pms.ronghuifeng.cn/msg.php?title=" . $MsgArray["title"] . "&company=" . $MsgArray["company"] . "&cdate=" . $MsgArray["cdate"] . "&guige=" . $MsgArray["guige"];
-        // 转化成json数组让微信可以接收
-        $json_data = json_encode($this->getDataArray($MsgArray));
-        $res = $this->https_request($url, urldecode($json_data)); // 请求开始
-        $res = json_decode($res, true);
-        
-        // if ($res['errcode'] == 0 && $res['errcode'] == "ok") {
-        // } else {
-        // }
-    /**
-     * 推送完毕
-     */
+        // $touser = "oj0Jj5qfVdus4El98ObZu2O-bdzw";
     }
     
     /*
