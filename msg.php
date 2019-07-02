@@ -11,13 +11,7 @@ if (! isset($_REQUEST['title']) || ! isset($_REQUEST['company']) || ! isset($_RE
 
 echo $_REQUEST['title'];
 ?></title>
-<script type="text/javascript">
-var msg;
-<?php
-echo "msg = '" . $_REQUEST['guige'] . "'";
-?>
-document.write(msg);
-</script>
+
 </head>
 <body>
 	<h1><?php
@@ -38,6 +32,14 @@ echo $_REQUEST['guige'];
 echo $_REQUEST['cdate'];
 ?></p>
 	</div>
+	<div id="ttt"></div>
 </body>
-
+<script type="text/javascript">
+var msg;
+<?php
+echo "msg = '" . $_REQUEST['guige'] . "'";
+?>
+var x = document.getElementById("ttt");
+x.innerHTML = msg;
+</script>
 </html>
