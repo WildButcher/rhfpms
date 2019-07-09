@@ -411,14 +411,19 @@ class ContractController extends Controller {
                 }
             }
         }
-        // 替换你的ACCESS_TOKEN,先获取ACCESS_TOKEN然后再取关注用户列表。循环用户列表推送消息
-        $ACCESS_TOKEN = json_decode($this->https_request("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxac2d658e937e3036&secret=fa167a09ef1bde4e3b58255ce5773354"), true)["access_token"];
+        // 先获取ACCESS_TOKEN然后再取关注用户列表。循环用户列表推送消息
+        // $ACCESS_TOKEN = json_decode($this->https_request("https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wxac2d658e937e3036&secret=fa167a09ef1bde4e3b58255ce5773354"), true)["access_token"];
         // 获取关注用户列表
-        $users = json_decode($this->https_request("https://api.weixin.qq.com/cgi-bin/user/get?access_token=" . $ACCESS_TOKEN), true)["data"]["openid"];
+        // $users = json_decode($this->https_request("https://api.weixin.qq.com/cgi-bin/user/get?access_token=" . $ACCESS_TOKEN), true)["data"]["openid"];
+        // $users = array(
+        // "oj0Jj5iXT7F65JqTHB0n42KQ0iFQ",
+        // "oj0Jj5qfVdus4El98ObZu2O-bdzw"
+        // );
+        
         // 循环用户列表推送消息
-        foreach ( $users as $u ) {
-            $this->pushmsg($ACCESS_TOKEN, $plandata['p_customer'], $plandata['p_stardate'], $guige, $u);
-        }
+        // foreach ( $users as $u ) {
+        // $this->pushmsg($ACCESS_TOKEN, $plandata['p_customer'], $plandata['p_stardate'], $guige, $u);
+        // }
         // $touser = "oj0Jj5qfVdus4El98ObZu2O-bdzw";
     }
     

@@ -6,9 +6,18 @@
      */
     function exportExcel(){
         var str = "__CONTROLLER__/toExcel";
-        $("#formContractList").attr("action", str);
-        $("#formContractList").submit();
+        $("#formInvoiceList").attr("action", str);
+        $("#formInvoiceList").submit();
     }
+    /*
+     * 方法作用：根据公司名称查询
+     */
+    function searchInvoice(){
+        var str = "__CONTROLLER__/recordSearch";
+        $("#formInvoiceList").attr("action", str);
+        $("#formInvoiceList").submit();
+    }
+    
 
 
 </script>
@@ -25,10 +34,9 @@
                 <div class="box">
                     <div class="box-body table-responsive">
                         <button class="btn btn-app btn-sm" onclick="exportExcel()">导出</button>
-                        <form method="post" action="__CONTROLLER__/recordSearch" role="form" id="formInvoiceList">
-                            <input type="text" name="p_name" class="form-control" placeholder="请输入查找的单位/公司名称...">
-                            <input type="hidden" id="sid" name="sid"/>
-                            <input type="submit" class="btn btn-primary btn-sm" value="查找"/>
+                        <form method="post" action="" role="form" id="formInvoiceList">
+                            <input type="text" name="p_name" class="form-control" value="{$p_name}" placeholder="请输入查找的单位/公司名称...">                            
+                            <input type="button" class="btn btn-primary btn-sm" onclick="searchInvoice()" value="查找"/>
                         </form>
                         <table id="example2" class="table table-bordered table-hover text-left">
                             <thead>
