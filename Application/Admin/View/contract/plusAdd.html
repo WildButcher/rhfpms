@@ -39,7 +39,7 @@
                 var str = '<table id=\"example2\" class=\"table table-bordered table-hover text-left\"><thead><tr><td class=\"text-right\"><b>【关闭】</b></td></thead><tbody>';
                 console.log(data);
                 for(x in data){
-                    str = str + '<tr><td onClick=\"fText(\'' + data[x].id + '\',\''+ data[x].p_name +'\',\''+ data[x].c_guige +'\',\''+ data[x].c_price +'\');\">'+data[x].c_guige+'</td></tr>';
+                    str = str + '<tr><td onClick=\"fText(\'' + data[x].id + '\',\''+ data[x].c_name +'\',\''+ data[x].c_guige +'\',\''+ data[x].c_price +'\');\">'+data[x].c_guige+'</td></tr>';
                 };
                 str = str + '</table>';
                 $('#c_show').append(str);
