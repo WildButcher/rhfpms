@@ -57,7 +57,7 @@
                                     <td>{$invoice.create_date}</td>
                                     <td>{$invoice.i_price}</td>
                                     <td>{$invoice.i_no}</td>
-                                    <td>{$invoice.c_num}</td>
+                                    <td><a href='__CONTROLLER__/invoiceUnionContract/cid/{$invoice.c_id}'>{$invoice.c_num}</a></td>
                                 </tr>
                             </volist>
                             </tbody>

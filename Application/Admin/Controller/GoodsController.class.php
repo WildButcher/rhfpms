@@ -178,9 +178,9 @@ class GoodsController extends Controller {
                     'like',
                     '%' . $c_guige . '%'
             );
-            $rs = $Form->where($wheresql)->field('id,p_name,c_guige,c_price')->order('id DESC')->select();
+            $rs = $Form->where($wheresql)->field('id,c_name,c_guige,c_price')->order('id DESC')->select();
         } else {
-            $rs = $Form->field('id,p_name,c_guige,c_price')->order('id DESC')->select();
+            $rs = $Form->field('id,c_name,c_guige,c_price')->order('id DESC')->select();
         }
         if ($rs) {
             $this->ajaxReturn($rs);

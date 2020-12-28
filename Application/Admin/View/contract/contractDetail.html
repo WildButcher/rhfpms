@@ -41,6 +41,7 @@
                             <tr>
                                 <th class="text-center">产品名称</th>
                                 <th class="text-center">产品规格</th>
+                                <th class="text-center">物料编号</th>
                                 <th class="text-center">类型</th>
                                 <th class="text-center">产品单价</th>
                                 <th class="text-center">产品数量</th>
@@ -52,6 +53,7 @@
                                 <tr>
                                     <td>{$contractplus.c_name}</td>
                                     <td>{$contractplus.c_guige}</td>
+                                    <td>{$contractplus.remark}</td>
                                     <td>{$contractplus.c_type}</td>
                                     <td>{$contractplus.c_price}</td>
                                     <td>{$contractplus.c_number}</td>
@@ -71,7 +73,7 @@
                                 var tab = document.getElementById('tabsum');
                                 var rows = tab.rows;
                                 for(var i = 1; i<rows.length-1; i++ ){
-                                	sum = sum + parseFloat(rows[i].cells[5].innerHTML);                                   
+                                	sum = sum + parseFloat(rows[i].cells[6].innerHTML);                                   
                                 }
                                 document.getElementById('hjje').innerHTML = sum;
                             </script>

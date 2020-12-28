@@ -73,9 +73,10 @@
                             <span class="caret"></span>
                           </button>
                           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                            <li><a href="__CONTROLLER__/index/year/2018">2018</a></li>
-                            <li><a href="__CONTROLLER__/index/year/2019">2019</a></li>
-                            <li><a href="__CONTROLLER__/index/year/2020">2020</a></li>
+                            <li><a href="__CONTROLLER__/index/year/{$year-2}">{$year-2}</a></li>
+                            <li><a href="__CONTROLLER__/index/year/{$year-1}">{$year-1}</a></li>
+                            <li><a href="__CONTROLLER__/index/year/{$year+1}">{$year+1}</a></li>
+                            <li><a href="__CONTROLLER__/index/year/{$year+2}">{$year+2}</a></li>
                            <!-- 
                               <li role="separator" class="divider"></li>
                               <li><a href="#">Separated link</a></li>

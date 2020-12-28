@@ -68,6 +68,35 @@ class InvoiceController extends Controller {
         }
     }
     
+    /**
+     * 显示发票对应的合同情况
+     */
+    public function invoiceUnionContract($cid){
+        $Form = M('contract'); // 读取单位信息、总金额等
+        $wheresql['id'] = array(
+                'in',
+                $cid
+        );
+        $rs = $Form->where($wheresql)->select();
+        $this->assign('contracts', $rs);
+        $this->display('invoice/contractDetail');
+    }
+    
+    /*
+     * 方法作用：修改合同状态字段
+     * 输入：需要修改的状态字段值$status，需要修改的记录表单form数据
+     * 输出：修改记录
+     */
+    public function recordChange($status){
+        $Form = D('contract');
+        $records = I('sid');
+        $map['id'] = array(
+                'in',
+                $records
+        );
+        $Form->where($map)->setField('c_status', $status);
+        $this->redirect(U('/Admin/Invoice/InvoiceUnionContract/cid/' . $records));
+    }
     /*
      * 方法作用：导出数据到
      * @param $data 一个二维数组,结构如同从数据库查出来的数组

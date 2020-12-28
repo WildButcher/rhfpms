@@ -250,6 +250,7 @@ class ContractController extends Controller {
         $con->where($map)->setField('c_status', '已开票');
         $con->where($map)->setField('i_no', I('i_no'));
         if ($Form->create()) {
+            $Form->c_id = $records;
             $result = $Form->add();
             if ($result) {
                 $this->redirect('contract/Index');
