@@ -18,6 +18,24 @@
         $("#formContractList").submit();
 
     }
+    
+    /**
+     * 删除一条数据
+     */
+    function delOne(obj){
+        var str = "__CONTROLLER__/recordDelete/id/" + obj;
+        $("#formContractList").attr("action", str);
+        $("#formContractList").submit();    	
+    }
+    /*
+     * 方法作用：增加合同明细
+     */
+    function plusContract(obj){
+        var str = "__APP__/Admin/ContractPlus/Index/id/" + obj;
+        $("#formContractList").attr("action", str);
+        $("#formContractList").submit();
+
+    }    
     /*
      * 开具发票
      */
@@ -99,9 +117,9 @@
                                 <tr>
                                     <td class="text-center">
                                         <input type="checkbox" name="selectedOne[]" value="{$contract.id}" />
-                                        <button class="btn btn-danger btn-sm" onclick="location='__CONTROLLER__/recordDelete/id/{$contract.id}'"><i class="fa fa-times"></i></button>
+                                        <button class="btn btn-danger btn-sm" onclick="delOne('{$contract.id}');"><i class="fa fa-times"></i></button>
                                         <button class="btn btn-success btn-sm" onclick="location='__CONTROLLER__/recordShow/id/{$contract.id}'"><i class="fa fa-edit"></i></button>
-                                        <button class="btn btn-facebook btn-sm" onclick="location='__APP__/Admin/ContractPlus/Index/id/{$contract.id}'"><i class="fa fa-plus-square"></i></button>
+                                        <button class="btn btn-facebook btn-sm" onclick="plusContract({$contract.id})"><i class="fa fa-plus-square"></i></button>
                                     </td>
                                     <td class="text-center">{$i}</td>
                                     <td><a href='__CONTROLLER__/detail/id/{$contract.id}'>{$contract.p_name}</a></td>

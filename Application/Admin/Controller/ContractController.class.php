@@ -90,9 +90,12 @@ class ContractController extends Controller {
      * 输入：公司名字
      * 输出：模糊查询的记录
      */
-    public function recordSearch(){
+    public function recordSearch($p_name){
         $Form = M('contract');
-        $c_name = I('p_name');
+        if ($p_name != '')
+            $c_name = $p_name;
+        else
+            $c_name = I('p_name');
         if ($c_name != '') {
             $wheresql['p_name'] = array(
                     'like',
@@ -104,9 +107,11 @@ class ContractController extends Controller {
         }
         if ($rs) {
             $this->assign('contracts', $rs);
+            $this->assign('p_name', $c_name);
             $this->display('contract/contractManager');
         } else {
             $this->assign('contracts', $rs);
+            $this->assign('p_name', $c_name);
             $this->display('contract/contractManager');
         }
     }
@@ -118,8 +123,9 @@ class ContractController extends Controller {
      */
     public function recordDelete($id){
         $Form = M('contract');
+        $p_name = I('p_name');
         if ($Form->delete($id)) {
-            $this->redirect('contract/Index');
+            $this->recordSearch($p_name);
         }
     }
     
@@ -173,10 +179,11 @@ class ContractController extends Controller {
      */
     public function recordUpdate(){
         $Form = D('contract');
+        $p_name = I('p_name');
         if ($Form->create()) {
             $result = $Form->save();
             if ($result) {
-                $this->redirect('contract/Index');
+                $this->recordSearch($p_name);
             } else {
                 $this->error('合同信息修改错误！');
             }
