@@ -74,7 +74,7 @@
                         <button class="btn btn-app btn-sm" onclick="changeStatus('已回款')">回款</button>
                         <button class="btn btn-app btn-sm" onclick="exportExcel()">导出</button>
                         <form method="post" action="__CONTROLLER__/recordSearch" role="form" id="formContractList">
-                            <input type="text" name="p_name" class="form-control" placeholder="请输入查找的单位/公司名称...">
+                            <input type="text" name="p_name" value="{$p_name}" class="form-control" placeholder="请输入查找的单位/公司名称...">
                             <input type="hidden" id="sid" name="sid"/>
                             <input type="submit" class="btn btn-primary btn-sm" value="查找"/>
                         </form>
