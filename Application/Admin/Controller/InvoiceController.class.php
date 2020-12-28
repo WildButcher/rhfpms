@@ -71,7 +71,7 @@ class InvoiceController extends Controller {
     /**
      * 显示发票对应的合同情况
      */
-    public function invoiceUnionContract($cid){
+    public function invoiceUnionContract($cid, $p_name){
         $Form = M('contract'); // 读取单位信息、总金额等
         $wheresql['id'] = array(
                 'in',
@@ -79,6 +79,7 @@ class InvoiceController extends Controller {
         );
         $rs = $Form->where($wheresql)->select();
         $this->assign('contracts', $rs);
+        $this->assign('p_name', I('p_name'));
         $this->display('invoice/contractDetail');
     }
     
@@ -95,7 +96,8 @@ class InvoiceController extends Controller {
                 $records
         );
         $Form->where($map)->setField('c_status', $status);
-        $this->redirect(U('/Admin/Invoice/InvoiceUnionContract/cid/' . $records));
+        $this->invoiceUnionContract($records, I('p_name'));
+        // $this->redirect(U('/Admin/Invoice/InvoiceUnionContract/cid/' . $records));
     }
     /*
      * 方法作用：导出数据到
