@@ -104,9 +104,11 @@ class ContractController extends Controller {
         }
         if ($rs) {
             $this->assign('contracts', $rs);
+            $this->assign('p_name', $c_name);
             $this->display('contract/contractManager');
         } else {
             $this->assign('contracts', $rs);
+            $this->assign('p_name', $c_name);
             $this->display('contract/contractManager');
         }
     }
