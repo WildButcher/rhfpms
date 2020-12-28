@@ -18,6 +18,14 @@
         $("#formInvoiceList").submit();
     }
     
+    /**
+     * 方法作用：根据发票记录查询关联的合同
+     */
+     function unionContract($cid){
+         var str = "__CONTROLLER__/invoiceUnionContract/cid/"+$cid;
+         $("#formInvoiceList").attr("action", str);
+         $("#formInvoiceList").submit();    	
+    }
 
 
 </script>
@@ -35,7 +43,7 @@
                     <div class="box-body table-responsive">
                         <button class="btn btn-app btn-sm" onclick="exportExcel()">导出</button>
                         <form method="post" action="" role="form" id="formInvoiceList">
-                            <input type="text" name="p_name" class="form-control" value="{$p_name}" placeholder="请输入查找的单位/公司名称...">                            
+                            <input type="text" id="p_name" name="p_name" class="form-control" value="{$p_name}" placeholder="请输入查找的单位或公司名称...">                            
                             <input type="button" class="btn btn-primary btn-sm" onclick="searchInvoice()" value="查找"/>
                         </form>
                         <table id="example2" class="table table-bordered table-hover text-left">
@@ -57,7 +65,7 @@
                                     <td>{$invoice.create_date}</td>
                                     <td>{$invoice.i_price}</td>
                                     <td>{$invoice.i_no}</td>
-                                    <td><a href='__CONTROLLER__/invoiceUnionContract/cid/{$invoice.c_id}'>{$invoice.c_num}</a></td>
+                                    <td><a href='javascript:unionContract("{$invoice.c_id}")'>{$invoice.c_num}</a></td>
                                 </tr>
                             </volist>
                             </tbody>

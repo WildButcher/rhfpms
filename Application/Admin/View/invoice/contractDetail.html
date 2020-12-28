@@ -22,8 +22,13 @@
         }
 
     }
+    /**
+     *  返回
+     */
     function fungoback(){
-        window.location.href = "/Admin/Invoice";
+    	var str = "/Admin/Invoice/recordSearch";
+    	$("#formContractList").attr("action", str);
+    	$("#formContractList").submit(); 
   }    
 </script>
 <aside class="right-side">
@@ -41,6 +46,7 @@
                         <button class="btn btn-app btn-sm" onclick="changeStatus('已回款')">回款</button>
                         <form method="post" action="Contract/recordSearch" role="form" id="formContractList">                            
                             <input type="hidden" id="sid" name="sid"/>
+                            <input type="hidden" id="p_name" name="p_name" value="{$p_name}" />
                         </form>
                         <table id="example2" class="table table-bordered table-hover text-left">
                             <thead>
